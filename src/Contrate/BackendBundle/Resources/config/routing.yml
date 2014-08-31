@@ -1,0 +1,8 @@
+contrate_backend_homepage:
+    path:     /
+    defaults: { _controller: ContrateBackendBundle:Default:index }
+
+
+ContrateBackendBundle_category:
+        resource: "@ContrateBackendBundle/Resources/config/routing/category.yml"
+        prefix:   /category

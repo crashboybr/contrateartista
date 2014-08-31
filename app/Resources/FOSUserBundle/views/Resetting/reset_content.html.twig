@@ -1,0 +1,19 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+
+<form action="{{ path('fos_user_resetting_reset', {'token': token}) }}" {{ form_enctype(form) }} method="POST" class="fos_user_resetting_request">
+    
+    <div class="inputLabel">
+    	{{ form_errors(form) }}
+    	{{ form_widget(form._token) }}
+        {{ form_label(form.plainPassword.first,'Senha') }}<br />
+		{{ form_widget(form.plainPassword.first) }}
+		<br />
+		{{ form_label(form.plainPassword.second,'Repita Senha') }}<br />
+		{{ form_widget(form.plainPassword.second) }}
+		{{ form_errors(form.plainPassword.first) }}
+    </div>
+
+    <input class="ButtonRegister" type="submit" value="{{ 'resetting.reset.submit'|trans }}" />
+</form>
+

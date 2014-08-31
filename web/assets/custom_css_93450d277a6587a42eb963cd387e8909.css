@@ -1,0 +1,152 @@
+ 
+
+
+#jm-header {
+    background-image: url('http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/images/bg.jpg');
+}
+
+
+
+body {
+	color:#5f5f5f;
+	font-family: 'Open Sans', sans-serif;	font-size: 13px;
+}
+
+
+.jm-module .jm-title,
+.dj-megamenu .modules-wrap .moduletable > h3 {
+    font-family: 'Open Sans', sans-serif;    font-size: 19px;
+}
+
+
+.dj-megamenu li a.dj-up_a {
+    font-family: 'Open Sans', sans-serif;    font-size: 14px;
+}
+
+
+.page-header h2,
+h2.item-title,
+.cat-children > h3,
+.contact-category > h2,
+.content-category > h2,
+.weblink-category > h2,
+.newsfeed > h2,
+.newsfeed-category > h2,
+.tag-category h2,
+.category-list > h2,
+.page-header > h1,
+.blog > h2,
+.blog-featured > h1,
+.login > h1,
+.registration > h1,
+h1.componentheading,
+.dj-cat-title {
+    font-family: 'Open Sans', sans-serif;    font-size: 22px;
+}
+
+
+
+ 
+.nav-tabs.nav-stacked li,
+.nav-tabs.nav-stacked li a {
+    font-family: 'Open Sans', sans-serif;    font-size: 13px!important;
+}
+
+
+.container-fluid {
+	}
+
+
+
+	
+
+
+
+.lcr #jm-content-wrapper-in {
+    margin-left: 222px;
+}
+
+.lcr #jm-content {
+    margin-right: 252px; 
+}
+
+.lcr #jm-right {
+    margin-left: -252px;
+}    
+
+
+.lrc #jm-content-wrapper,
+.lrc #jm-middle-page {
+    margin-left: -474px;
+}
+
+.lrc #jm-content-wrapper-in {
+    margin-left: 222px;
+}
+
+.lrc #jm-content {
+    margin-left: 252px;
+}
+
+
+.clr #jm-content-wrapper-in {
+    margin-right: 222px;
+}
+
+.clr #jm-content {
+    margin-right: 252px;
+}
+
+.clr #jm-left {
+    margin-left: -222px;
+}
+
+.clr #jm-right {
+    margin-left: -252px;
+}
+
+
+ 
+@media (min-width: 768px) and (max-width: 1100px) {
+    .lcr #jm-content-wrapper-in {
+        margin-left: 154.5px;
+    }
+    
+    .lcr #jm-content {
+        margin-right: 184.5px; 
+    }
+    
+    .lcr #jm-right {
+        margin-left: -184.5px;
+    }    
+    
+    .lrc #jm-content-wrapper,
+    .lrc #jm-middle-page {
+        margin-left: -339px;
+    }
+    
+    .lrc #jm-content-wrapper-in {
+        margin-left: 154.5px;
+    }
+    
+    .lrc #jm-content {
+        margin-left: 184.5px;
+    }
+    
+    .clr #jm-content-wrapper-in {
+        margin-right: 154.5px;
+    }
+    
+    .clr #jm-content {
+        margin-right: 184.5px;
+    }
+    
+    .clr #jm-left {
+        margin-left: -154.5px;
+    }
+    
+    .clr #jm-right {
+        margin-left: -184.5px;
+    }
+}    
+ 

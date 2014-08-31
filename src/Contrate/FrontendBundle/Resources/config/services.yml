@@ -1,0 +1,12 @@
+parameters:
+#    contrate_frontend.example.class: Contrate\FrontendBundle\Example
+
+services:
+#    contrate_frontend.example:
+#        class: %contrate_frontend.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
+    contrate_user.registration.form.type:
+        class: Contrate\BackendBundle\Form\UserType
+        arguments: [%fos_user.model.user.class%]
+        tags:
+            - { name: form.type, alias: contrate_user_registration }

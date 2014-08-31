@@ -1,0 +1,7 @@
+parameters:
+#    contrate_backend.example.class: Contrate\BackendBundle\Example
+
+services:
+#    contrate_backend.example:
+#        class: %contrate_backend.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

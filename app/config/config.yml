@@ -67,3 +67,33 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+fos_user:
+    db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
+    firewall_name: main
+    user_class: Contrate\BackendBundle\Entity\User
+    registration:
+        form:
+            type: contrate_user_registration
+
+knp_paginator:
+    page_range: 2                      # default page range used in pagination control
+    default_options:
+        page_name: page                # page query parameter name
+        sort_field_name: sort          # sort field query parameter name
+        sort_direction_name: direction # sort direction query parameter name
+        distinct: true                 # ensure distinct results, useful when ORM queries are using GROUP BY statements
+    template:
+        pagination: KnpPaginatorBundle:Pagination:sliding.html.twig     # sliding pagination controls template
+        sortable: KnpPaginatorBundle:Pagination:sortable_link.html.twig # sort link template
+
+white_october_breadcrumbs:
+    separator:           '/'
+    separatorClass:      'separator'
+    listId:              'wo-breadcrumbs'
+    listClass:           'breadcrumb'
+    itemClass:           ''
+    linkRel:             ''
+    #locale:              null, so the default locale is used
+    #translation_domain:  null, so the default domain is used
+    viewTemplate:       "ContrateFrontendBundle:Default:breadcrumbs.html.twig"

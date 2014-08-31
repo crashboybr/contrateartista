@@ -1,0 +1,9 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% block fos_user_content %}
+<div class="content-left">
+	<h3>Trocar senha</h3>
+
+	{% include "FOSUserBundle:Resetting:reset_content.html.twig" %}
+</div>
+{% endblock fos_user_content %}

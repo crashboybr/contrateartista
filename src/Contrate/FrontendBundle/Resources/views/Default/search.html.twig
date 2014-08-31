@@ -1,0 +1,146 @@
+{% extends '::base.html.twig' %}
+
+{% block classjmallpage %}scheme2 noright lcr topbar middlebar{% endblock %}
+{% block body %}
+
+<div id="jm-breadcrumbs" class="clearfix">
+  <div id="jm-breadcrumbs-in">
+    {{ wo_render_breadcrumbs() }}
+    <ul class="breadcrumb">
+      <li class="active">Você está em: &nbsp;</li>
+      
+      <li><a href="#" class="pathway">Home</a><span class="divider"><img src="/assets/arrow.png" alt=""></span></li>
+      <li><a href="#" class="pathway">Artistas</a><span class="divider"><img src="/assets/arrow.png" alt=""></span></li>
+      <li class="active"><span>Apresentador</span></li></ul>
+
+    </div>
+  </div>
+
+  <div id="jm-content-wrapper">
+    <div id="jm-content-wrapper-in">
+      <div id="jm-content-wrapper-bg" class="clearfix ">
+        <div id="jm-middle-page">
+          <div id="jm-content">
+            <div id="jm-maincontent">
+              <div id="system-message-container"></div>
+              <div id="dj-classifieds" class="clearfix">
+                <div class="djcf-ad-top clearfix">
+                  <div class="moduletable">
+
+
+                    <div class="custom">
+                      <p><a href="http://dj-extensions.com/faq/dj-classifieds-faq/how-to-place-a-banner-adsense-into-dj-classifieds" target="_blank"></a></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="items">
+                  <table class="dj-items" width="100%">
+                    <tbody>
+                      {% for artist in artists %}
+                      <tr class="row0">
+                        <td class="icon first" width="140px">
+                          <a href="#"><img src="{{ asset(artist.pic) }}" style="width: 150px;" alt=""></a>
+                        </td>
+                        <td class="name">
+                          <h3><a class="title Tips1" href="#" title="" rel="">{{ artist.name }}</a></h3>
+                        </td>
+                        <td class="region">
+                          <a href="#">{{ artist.category.name }}
+                          </a>
+                        </td>
+                        <td class="date_exp">{{ artist.user.name }}</td>
+                        <td class="col_distance"><button type="submit" class="btn-listing">Contato</button></td>
+                      </tr>
+                      {% endfor %}
+
+                    </tbody>
+                  </table>
+                  
+<div class="navigation">
+    {{ knp_pagination_render(artists) }}
+</div>
+                </div>
+              </div>
+            </div>
+
+
+            <div id="jm-content-bottom" class="jm-grid">
+              <div class="content-bottom count_1">
+                <div class="row">
+                  <div class="content-bottom-in span0"><div class="content-bottom-bg"> 
+                    <div class="jm-module ">
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>          
+
+    </div>           
+  </div>    
+</div>
+<aside id="jm-left" class="span3">              
+  <div class="left-column count_3">
+    <div class="row">
+      <div class="left-column-in span0">
+        <div class="left-column-bg">  
+
+        </div></div></div>
+        <div class="row">
+          <div class="left-column-in span0">
+            <div class="left-column-bg"><div class="jm-module ">
+
+              <div class="jm-module-in">
+
+
+
+
+                <div class="jm-module-content clearfix">
+                  <div id="mod_djcf_search206" class="dj_cf_search">
+                    {{ form_start(filterForm, { attr: { 'novalidate': 'novalidate', 'id': 'filters', 'method': 'get' }}) }}
+                    <h3 class="jm-title ">Busca</h3>
+                    {{ form_widget(filterForm.q, { attr: { 'class': 'inputbox first_input', 'placeholder': 'Busque um artista...' }}) }}
+                    <div style="clear:both"></div>
+                    <div style="clear:both"></div><br/>
+
+                    <h3 class="jm-title ">Categorias</h3> 
+
+                    {% for category in filterForm.category %}
+                    <div class="search_only_images">              
+                      {{ form_widget(category, { attr: { 'class': 'inputbox', 'onclick': 'submitFilter()' }}) }}
+                      <span class="label">{{ category.vars.label }}</span>
+                    </div>
+                    {% endfor %}
+
+                    <br />
+
+                    {{ form_widget(filterForm.submit, { attr: { 'class': 'button btn' }}) }}
+                    {{ form_end(filterForm) }}
+                    <div style="clear:both"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row"><div class="left-column-in span0">
+        <div class="left-column-bg"> 
+          <div class="jm-module  title-border1-ms jm-image-block">
+            <div class="jm-module-in">  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>      
+</aside>
+</div> 
+
+
+{% endblock %}
+
+

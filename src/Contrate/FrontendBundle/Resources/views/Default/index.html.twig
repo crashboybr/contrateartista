@@ -1,0 +1,177 @@
+{% extends '::base.html.twig' %}
+
+{% block header %}
+<section id="jm-header">  
+  <div id="jm-header-in" class="container">
+    <div id="jm-header-space" class="jm-light clearfix">      
+      <div class="jm-module ">
+        <div class="jm-module-in">
+          <div class="jm-module-content clearfix">
+
+
+            <div class="custom">
+
+              <div class="jm-custom-title">Todos os famosos do Brasil!</div>
+              <div class="jm-custom-subtitle">Aqui você poderá encontrar o seu artista preferido</div></div>
+
+            </div>
+          </div>
+        </div>
+        <div class="jm-module  jm-search">
+          <div class="jm-module-in">
+            <div class="jm-module-content clearfix">
+              <div id="mod_djcf_search211" class="dj_cf_search">
+                <form action="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/category-table-layout?se=1" method="get" name="" id="form-search">
+                  <input type="hidden" name="se" value="1">      
+                  <input type="text" size="12" name="search" class="inputbox first_input" value="Procurar um artista..." onfocus="if(this.value==&#39;What are you looking for...?&#39;) this.value=&#39;&#39;;" onblur="if (this.value==&#39;&#39;) this.value=&#39;What are you looking for...?&#39;;">
+
+                  <button type="submit" class="button btn">Search</button>
+
+
+                </form>
+
+                <div style="clear:both"></div>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+        <div class="jm-module  jm-search">
+          <div class="jm-module-in">
+            <div class="jm-module-content clearfix">
+
+
+              <div class="custom jm-search">
+                <div style="text-align: center;">
+                  <p class="jm-advanced"><a href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/classifieds#form-search">Advanced search</a></p>
+                </div></div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+</section>
+            
+
+{% endblock %}
+{% block body %}
+
+<div id="jm-content-wrapper">
+      <div id="jm-content-wrapper-in">
+        <div id="jm-content-wrapper-bg" class="clearfix ">
+          <div id="jm-middle-page">
+            <div id="jm-content">
+              <div id="jm-maincontent">
+                <div id="system-message-container">
+                </div>
+
+                <div id="dj-classifieds" class="clearfix">
+
+                	<div class="dj-category cat_cols4">
+                		<div class="cat_row_title">
+                			Categorias<a class="rss_icon" href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/category-table-layout?format=feed&type=rss"><img src="/assets/rss.png"></a>        
+                		</div>
+                		<div class="cat_row cat_row0">    
+                			{% for cat in categories %}                  
+                			<div class="cat_col">
+                				<div class="cat_col_in">
+                					<div class="title">
+                						<a href="{{ path('contrate_frontend_search', {'category': cat.id }) }}"><img src="{{ asset(cat.pic) }}" alt="{{ cat.name }}"></a>
+                						<div class="cat_title_desc">
+                							<h2>
+                								<a href="#">{{ cat.name }} <span>(3)</span></a>
+                							</h2>
+                							<span class="cat_desc"></span>
+                						</div>
+                					</div>
+                				</div>
+                			</div>
+                			{% endfor %}
+
+
+
+
+                			<div style="clear:both"></div>
+                		</div>
+                	</div>
+                	<div class="dj-items-blog">
+                	</div>  
+                </div>
+                    <script type="text/javascript">
+                      function DJCatMatchModules(className){
+                        var maxHeight = 0;
+                        var divs = null;
+                        if (typeof(className) == 'string') {
+                          divs = document.id(document.body).getElements(className);
+                        } else {
+                          divs = className;
+                        }
+                        if (divs.length > 1) {                      
+                          divs.each(function(element) {
+                //maxHeight = Math.max(maxHeight, parseInt(element.getStyle('height')));
+                maxHeight = Math.max(maxHeight, parseInt(element.getSize().y));
+              });
+
+                          divs.setStyle('height', maxHeight);
+
+                        }
+                      }
+
+                      window.addEvent('load', function(){
+                        DJCatMatchModules('.item_box_in2');
+                      });
+
+                    </script>
+
+                  </div>
+                </div>
+              </div>          
+
+            </div>           
+          </div>    
+        </div>
+      </div>
+ {% endblock %}
+
+
+{% block bottom %}
+
+<div id="jm-bottom1">
+  <div id="jm-bottom1-in" class="container">
+    <div id="jm-bottom1-space">
+
+      <div class="bottom1 count_1"><div class="row"><div class="bottom1-in span0"><div class="bottom1-bg">    <div class="jm-module  title-border2-ms slider1-ms slider2-ms">
+
+
+
+      </div>
+    </div></div></div></div>        </div>     
+  </div>
+</div>
+              
+<div id="jm-bottom2">
+  <div id="jm-bottom2-in" class="container">
+    <div id="jm-bottom2-space">
+      <div class="bottom2 count_1"><div class="row"><div class="bottom2-in span0"><div class="bottom2-bg">    <div class="jm-module  title-border1-ms">
+        <div class="jm-module-in">
+          <h3 class="jm-title ">Artistas recentes</h3>
+          <div class="jm-module-content clearfix">
+            <div class="mod_djclassifieds_items clearfix">
+              <div class="items items-cols3">
+                <div class="items-col icol1"><div class="icol-in">
+                  <div class="item"><div class="title"><a class="title_img" href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/classifieds/furniture/ad/bath-sink,38"><img style="margin-right:3px;" src="http://www.contrateartistas.com/images/artista/472/1a1563db_3c50_4582_a88e_c3188277696a.jpg" alt="Bath Sink" title="38_39_bathroom-sink.1_l"></a><a class="title" href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/classifieds/furniture/ad/bath-sink,38">Alexandre Barillari</a><div class="date_cat"><span class="date">Ator</span><span class="category"><a class="title_cat" href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/classifieds/furniture">Montenegro & Raman</a></span></div></div></div><div class="item"><div class="title"><a class="title_img" href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/classifieds/furniture/ad/leather-sofa,37"><img style="margin-right:3px;" src="http://www.contrateartistas.com/images/artista/478/02fdce22_fbfe_4b9f_a726_ac20f9b16fb1.JPG" alt="Leather Sofa" title="sofa1"></a><a class="title" href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/classifieds/furniture/ad/leather-sofa,37">Anderson Muller</a><div class="date_cat"><span class="date">Ator</span><span class="category"><a class="title_cat" href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/classifieds/furniture">Montenegro & Raman</a></span></div></div></div><div style="clear:both"></div></div></div><div class="items-col icol2"><div class="icol-in"><div class="item"><div class="title"><a class="title_img" href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/classifieds/furniture/ad/dining-table,36"><img style="margin-right:3px;" src="http://www.contrateartistas.com/images/artista/171/4fb322a2_7508_4065_bfed_a5d9489b2b0b.jpg" alt="Dining Table" title="36_37_dining-table_l"></a><a class="title" href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/classifieds/furniture/ad/dining-table,36">Alexandre Moreno</a>
+                  <div class="date_cat"><span class="date">Ator</span><span class="category"><a class="title_cat" href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/classifieds/furniture">Gulierme Abreu</a></span></div></div></div><div class="item promotion p_special"><div class="title"><a class="title_img" href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/classifieds/fashion/ad/jeans-jacket,35"><img style="margin-right:3px;" src="http://www.contrateartistas.com/images/artista/480/14e1bb84_949d_41b4_bd37_6cffcb5c6f67.jpg" alt="Jeans Jacket" title="35_36_22_ad11"></a><a class="title" href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/classifieds/fashion/ad/jeans-jacket,35">André Bankoff</a><div class="date_cat"><span class="date">Ator</span><span class="category"><a class="title_cat" href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/classifieds/fashion">Montenegro & Raman</a></span></div></div></div><div style="clear:both"></div></div></div><div class="items-col icol3"><div class="icol-in"><div class="item"><div class="title"><a class="title_img" href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/classifieds/fashion/ad/trendy-skirt,34"><img style="margin-right:3px;" src="http://www.contrateartistas.com/images/artista/172/e165b1c4_62a3_48b2_b52d_de974160881e.jpg" alt="Trendy Skirt" title="34_35_3_ad6"></a><a class="title" href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/classifieds/fashion/ad/trendy-skirt,34">Alexandre Slavieiro</a><div class="date_cat"><span class="date">Ator</span><span class="category"><a class="title_cat" href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/classifieds/furniture">Montenegro & Raman</a><a class="title_cat" href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/classifieds/fashion"></a></span></div></div></div><div class="item"><div class="title"><a class="title_img" href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/classifieds/fashion/ad/stylish-suit,33"><img style="margin-right:3px;" src="http://www.contrateartistas.com/images/artista/481/df406306_4776_498b_b110_f98292e016b8.jpg" alt="Stylish Suit" title="33_34_26_ad16"></a><a class="title" href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/classifieds/fashion/ad/stylish-suit,33">André Di Mauro</a><div class="date_cat"><span class="date">Ator</span><span class="category"><a class="title_cat" href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/classifieds/fashion">Montenegro & Raman</a></span></div></div></div>       <div style="clear:both"></div>
+                </div></div>
+              </div>
+            </div>        
+          </div>
+        </div>
+      </div>
+    </div></div></div></div>        </div>     
+  </div>
+</div>
+              
+{% endblock %}

@@ -1,0 +1,30 @@
+artist:
+    path:     /
+    defaults: { _controller: "ContrateBackendBundle:Artist:index" }
+
+artist_show:
+    path:     /{id}/ver
+    defaults: { _controller: "ContrateBackendBundle:Artist:show" }
+
+artist_new:
+    path:     /novo
+    defaults: { _controller: "ContrateBackendBundle:Artist:new" }
+
+artist_create:
+    path:     /create
+    defaults: { _controller: "ContrateBackendBundle:Artist:create" }
+    requirements: { _method: post }
+
+artist_edit:
+    path:     /{id}/editar
+    defaults: { _controller: "ContrateBackendBundle:Artist:edit" }
+
+artist_update:
+    path:     /{id}/update
+    defaults: { _controller: "ContrateBackendBundle:Artist:update" }
+    requirements: { _method: post|put }
+
+artist_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ContrateBackendBundle:Artist:delete" }
+    requirements: { _method: post|delete }

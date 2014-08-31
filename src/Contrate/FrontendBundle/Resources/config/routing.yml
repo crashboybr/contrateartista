@@ -1,0 +1,11 @@
+contrate_frontend_homepage:
+    path:     /
+    defaults: { _controller: ContrateFrontendBundle:Default:index }
+
+ContrateBackendBundle_artist:
+        resource: "@ContrateBackendBundle/Resources/config/routing/artist.yml"
+        prefix:   /artista
+
+contrate_frontend_search:
+    path:     /busca/{category}
+    defaults: { _controller: ContrateFrontendBundle:Default:search, 'category': null }

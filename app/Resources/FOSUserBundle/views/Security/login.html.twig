@@ -1,0 +1,107 @@
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% extends '::base.html.twig' %}
+
+{% block featuredcontent %}
+<div class="substrate">
+				<img src="http://projetofinal.dev/wp-content/themes/academy/images/bgs/site_bg.jpg" class="fullwidth" alt="" />			</div>
+						<div class="row">
+							<div class="page-title">
+					<h1 class="nomargin">Login</h1>
+				</div>
+				<!-- /page title -->				
+						</div>
+
+{% endblock %}
+
+{% block body %}
+<div id="jm-main-space">
+	<div id="jm-breadcrumbs" class="clearfix">
+		<div id="jm-breadcrumbs-in">
+
+			<ul class="breadcrumb">
+				<li class="active">Você está em: &nbsp;</li>
+				<li><a href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/" class="pathway">Home</a><span class="divider"><img src="/assets/arrow.png" alt=""></span></li>
+				<li class="active"><span>Login</span></li>
+			</ul>
+
+		</div>
+	</div>
+
+	<div id="jm-content-wrapper">
+		<div id="jm-content-wrapper-in">
+			<div id="jm-content-wrapper-bg" class="clearfix ">
+				<div id="jm-middle-page">
+					
+					<div id="jm-content">
+						{% if error %}
+						<div id="jm-content-top" class="jm-grid">
+							<div class="content-top count_1">
+								<div class="row">
+									<div class="content-top-in span0">
+										<div class="content-top-bg">	
+											<div class="jm-module ">
+												<div class="jm-module-in">
+													<div class="jm-module-content clearfix">
+
+														<div class="custom">
+															<p class="alerta" style="text-align: center;">{{ error|trans }}</strong></p>
+														</div>
+
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div> 
+						</div>
+						{% endif %}
+						<div id="jm-maincontent">
+							<div id="system-message-container"></div>
+							<div class="login ">
+								<form action="{{ path("fos_user_security_check") }}" method="post">
+									<fieldset class="well">
+										<input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />						 
+										<div class="control-group">
+											<div class="control-label">
+												<label id="username-lbl" for="username" class=" required">Login<span class="star">&nbsp;*</span></label>						
+											</div>
+											<div class="controls">
+												<input class="validate-username" type="text" id="username" placeholder="digite seu email" name="_username" value="{{ last_username }}" aria-required="true" required="required" />
+											</div>
+										</div>
+
+										<div class="control-group">
+											<div class="control-label">
+												<label id="password-lbl" for="password" class=" required">Senha<span class="star">&nbsp;*</span></label>						
+											</div>
+											<div class="controls">	
+												<input class="validate-password" type="password" id="password" name="_password" required="required" aria-required="true" />					
+											</div>
+										</div>
+
+										<div class="space">                      
+											<a href="{{ path('fos_user_resetting_request') }}" class="link-generico">Esqueci minha senha</a><br/>
+										</div>
+
+										<input type="hidden" id="remember_me" name="_remember_me" value="on" />
+
+										<button type="submit" class="btn btn-primary" id="_submit" name="_submit">Login</button>
+									</div>
+								</form>
+								
+							</div>
+
+						</div>
+					</div>
+				</div>	        
+
+			</div>           
+		</div>    
+	</div>
+</div>
+
+{% endblock %}
+
