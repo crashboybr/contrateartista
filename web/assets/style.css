@@ -2521,5 +2521,38 @@ border-radius: 5px;
 padding: 15px 0 15px 0;
 border: 1px solid #18bc18;color:#127512;font-weight:bold;}
 .btn-upload{color:#666;background-color:#ddd;border:1px solid #ccc;border-radius:3px;padding:5px 15px 5px 15px;}
-.contact_mainrow h2{background-image:url(../desc.png);background-repeat:no-repeat;}
-.row_gd.added h2{background-image:url(../details.png);background-repeat:no-repeat;}
+.contact_mainrow h2{background-image:url(../assets/desc.png);background-repeat:no-repeat;}
+.row_gd.added h2{background-image:url(../assets/details.png);background-repeat:no-repeat;}
+
+.orcamento{background-image:url(../images/calendar.png);background-repeat:no-repeat;}
+
+
+a {
+  color: inherit;
+}
+a:hover {
+  color: #29b6a6;
+}
+.jm-bottom a:hover {
+  color: #94dbd3;
+}
+.jm-module.white-ms a:hover {
+  color: #29b6a6;
+}
+::selection {
+  background: #29b6a6;
+  color: #fff;
+}
+::-webkit-selection {
+  background: #29b6a6;
+  color: #fff;
+}
+::-moz-selection {
+  background: #29b6a6;
+  color: #fff;
+}
+
+label.required:after {
+    content: " *";
+    color: #ff0000;
+}

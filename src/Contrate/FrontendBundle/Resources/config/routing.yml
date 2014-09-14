@@ -9,3 +9,7 @@ ContrateBackendBundle_artist:
 contrate_frontend_search:
     path:     /busca/{category}
     defaults: { _controller: ContrateFrontendBundle:Default:search, 'category': null }
+
+ContrateBackendBundle_contact:
+        resource: "@ContrateBackendBundle/Resources/config/routing/contact.yml"
+        prefix:   /contato

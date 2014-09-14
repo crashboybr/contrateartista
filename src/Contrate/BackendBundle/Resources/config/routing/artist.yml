@@ -15,6 +15,11 @@ artist_create:
     defaults: { _controller: "ContrateBackendBundle:Artist:create" }
     requirements: { _method: post }
 
+artist_create_contact:
+    path:     /enviar
+    defaults: { _controller: "ContrateBackendBundle:Artist:createContact" }
+    requirements: { _method: post }
+
 artist_edit:
     path:     /{id}/editar
     defaults: { _controller: "ContrateBackendBundle:Artist:edit" }

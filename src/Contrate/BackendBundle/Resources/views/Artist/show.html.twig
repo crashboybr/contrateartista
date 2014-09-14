@@ -1,44 +1,127 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    <h1>Artist</h1>
+<section id="jm-main" class="container clearfix">
+  <div id="jm-main-space">
+    {% for flashMessage in app.session.flashbag.get('error') %}
 
-    <table class="record_properties">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ entity.id }}</td>
-            </tr>
-            <tr>
-                <th>Name</th>
-                <td>{{ entity.name }}</td>
-            </tr>
-            <tr>
-                <th>Createdat</th>
-                <td>{{ entity.createdAt|date('Y-m-d H:i:s') }}</td>
-            </tr>
-            <tr>
-                <th>Updatedat</th>
-                <td>{{ entity.updatedAt|date('Y-m-d H:i:s') }}</td>
-            </tr>
-            <tr>
-                <th>Pic</th>
-                <td>{{ entity.pic }}</td>
-            </tr>
-        </tbody>
-    </table>
+            <div class="custom" style="">
+                <p class="alerta" style="text-align: center;">{{ flashMessage }}</p>
+            </div>  
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('artist') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>
-        <a href="{{ path('artist_edit', { 'id': entity.id }) }}">
-            Edit
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+        {% endfor %}
+
+        {% for flashMessage in app.session.flashbag.get('success') %} 
+
+            <div class="custom">
+                <p class="alerta-sucess" style="text-align: center;"><img src="/assets/check-sucesso.png" width="28" height="25">{{ flashMessage }}</p><br/>
+            </div>
+
+        {% endfor %}
+        
+    <div id="jm-breadcrumbs" class="clearfix">
+      <div id="jm-breadcrumbs-in">
+
+        <ul class="breadcrumb">
+         <li class="active">Você está em: &nbsp;</li><li><a href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/" class="pathway">Home</a><span class="divider"><img src="images/arrow.png" alt=""></span></li><li><a href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/classifieds" class="pathway">celebridades</a>
+         <span class="divider"><img src="images/arrow.png" alt=""></span></li><li class="active"><span>{{ artist.name }}</span></li></ul>
+
+     </div>
+ </div>
+
+ <div id="jm-content-wrapper">
+    <div id="jm-content-wrapper-in" style="margin-left:0;padding:0;">
+        <div id="jm-content-wrapper-bg" class="clearfix ">
+            <div id="jm-middle-page">
+                <div id="jm-content">
+                    <div id="jm-maincontent">
+                        <div id="system-message-container"></div>
+
+                        <div id="dj-classifieds" class="clearfix">
+                            <div class="djcf-ad-top clearfix"></div>          
+                            <div class="dj-item">
+                                <div class="title_top info">
+                                    <h2>{{ artist.name }}</h2>
+                                </div>        
+                                <div class="dj-item-in">
+                                    <div class="djcf_images_generaldet_box">    
+                                        <div class="images_wrap" style="width:500px"><div class="images">
+                                            <div class="djc_images">
+                                                <div class="djc_mainimage">
+                                                    <a id="djc_mainimagelink" rel="djc_lb_0" title="Leather Sofa" href="37_sofa1_thb.jpg">
+                                                        <img width="496px" id="djc_mainimage" alt="Leather Sofa" src="{{ asset(artist.pic) }}">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>            
+
+                                    <div class="general_det no_images" style="width:400px;float:left;margin:0 0 0 30px;">       
+                                        <div class="row_gd">
+
+                                        </div>
+                                        <div class="row_gd djcf_contact">
+                                            <div class="contact_mainrow">
+                                                <span class="description contato"><h2>Contato</h2></span>
+                                                <span class="row_value"><strong>Categoria:</strong> {{ artist.category.name }} <br></span>
+                                                <span class="row_value"><strong>Agencia:</strong> {{ artist.agency }}<br></span>
+                                                <span class="row_value"><b>Site:</b> <a class="btnContact" target="_blank" rel="nofollow" href="{{ artist.website }}">{{ artist.website }}</a><br></span>
+                                                <span class="row_value"><b>Telefone:</b> {{ artist.phone }}<br></span>
+                                            </div>
+
+
+                                        </div>
+                                        <div class="row_gd added">
+                                            <span class="description descricao"><h2>Descrição</h2></span>
+                                            <span class="row_value">{{ artist.description }}</span>
+                                        </div>
+
+                                    </div>
+                                    <!--começa o form-->
+
+                                    <div style="clear:both"></div>              
+                                    <div class="ask_form_abuse_outer">
+
+
+                                        <div style="clear:both"></div>
+
+                                        <div id="abuse_form" style="display:none;overflow:hidden;">
+                                            <form action="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/classifieds/furniture/ad/index.php" method="post" name="djabuseForm" id="djabuseForm" class="form-validate">
+                                               <label for="abuse_message" id="abuse_message-lbl">Message</label><br>
+                                               <textarea id="abuse_message" name="abuse_message" rows="5" cols="55" class="inputbox required" aria-required="true" required="required"></textarea><br>
+                                               <button class="button" type="submit" id="submit_b">Send</button>
+                                               <input type="hidden" name="abuse_status" id="abuse_status" value="0">
+                                               <input type="hidden" name="item_id" id="item_id" value="37">
+                                               <input type="hidden" name="cid" id="cid" value="18">
+                                               <input type="hidden" name="option" value="com_djclassifieds">
+                                               <input type="hidden" name="view" value="item">
+                                               <input type="hidden" name="task" value="abuse">
+                                           </form>      
+                                       </div>
+                                   </div>
+                                   <div style="clear:both"></div>          
+
+                               </div>
+                               <div class="description"><h2 class="orcamento">Solicite seu orçamento:</h2><div class="desc_content">
+                                <div class="artista-orcamento">
+                                    {% include 'ContrateBackendBundle:Contact:new.html.twig' %}
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div style="clear:both"></div>
+                    </div>
+                </div>  
+            </div>
+        </div>
+    </div>
+</div>          
+</div>           
+</div>    
+</div>
+<aside id="jm-left" class="span3"></aside>
+</div>
+</section>     
+
+
 {% endblock %}

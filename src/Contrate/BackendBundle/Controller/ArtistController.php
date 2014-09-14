@@ -6,7 +6,9 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use Contrate\BackendBundle\Entity\Artist;
+use Contrate\BackendBundle\Entity\Contact;
 use Contrate\BackendBundle\Form\ArtistType;
+use Contrate\BackendBundle\Form\ContactType;
 
 /**
  * Artist controller.
@@ -112,11 +114,58 @@ class ArtistController extends Controller
             throw $this->createNotFoundException('Unable to find Artist entity.');
         }
 
-        $deleteForm = $this->createDeleteForm($id);
+        $contact = new Contact();
+        $form = $this->createForm(new ContactType(), $contact, array(
+            'action' => $this->generateUrl('artist_create_contact'),
+            'method' => 'POST',
+        ));
+
+        $form->add('submit', 'submit', array('label' => 'Enviar'));
+
+        $form->add('artistId', 'hidden', array('data' => $id));
 
         return $this->render('ContrateBackendBundle:Artist:show.html.twig', array(
-            'entity'      => $entity,
-            'delete_form' => $deleteForm->createView(),
+            'artist'      => $entity,
+            'form'   => $form->createView(),
+        ));
+    }
+
+    public function createContactAction(Request $request)
+    {
+        $entity = new Contact();
+        $em = $this->getDoctrine()->getManager();
+        
+        $artist_id  = $request->get('contrate_backendbundle_contact')['artistId'];
+        
+        $artist = $em->getRepository('ContrateBackendBundle:Artist')->find($artist_id);
+        
+        $entity->setArtist($artist);
+
+        $form = $this->createForm(new ContactType(), $entity, array(
+            'action' => $this->generateUrl('artist_create_contact'),
+            'method' => 'POST',
+        ));
+        $form->add('submit', 'submit', array('label' => 'Enviar'));
+        $form->add('artistId', 'hidden', array('data' => $artist_id));
+        $form->handleRequest($request);
+
+        if ($form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $entity->setStatus(-1);
+            $em->persist($entity);
+            $em->flush();
+
+            $this->get('session')->getFlashBag()->set('success', 'Formulário enviado com sucesso!');
+
+            return $this->redirect($this->generateUrl('artist_show', array('id' => $artist_id)));
+        }
+
+        $this->get('session')->getFlashBag()->set('error', 'Preencha todos os campos do formulário!');
+
+        return $this->render('ContrateBackendBundle:Artist:show.html.twig', array(
+            'entity' => $entity,
+            'artist' => $artist,
+            'form'   => $form->createView(),
         ));
     }
 

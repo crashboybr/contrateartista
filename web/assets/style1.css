@@ -39,7 +39,7 @@
   color: #29b6a6;
 }
 .dj-megamenu li ul.dj-subtree > li > a {
-  background-image: url('../images/style1/li.png');
+  background-image: url('../assets/li.png');
 }
 #jm-bottom3 {
   background: #29b6a6;
@@ -102,10 +102,10 @@ a:hover {
   color: #fff;
 }
 ul li {
-  background-image: url('../images/style1/li.png');
+  background-image: url('../assets/li.png');
 }
 .jm-module.white-ms ul li {
-  background-image: url('../images/style1/li.png');
+  background-image: url('../assets/li.png');
 }
 ul.jm-color li {
   background-image: url('../images/style2/li.png');
@@ -118,7 +118,7 @@ ul.jm-color2 li {
 }
 #jm-allpage .jm-search button.button,
 #jm-allpage .jm-search input.button {
-  background-image: url("../images/style1/search.png");
+  background-image: url("../assets/search.png");
 }
 .btn,
 a.button,
@@ -231,46 +231,46 @@ div.pagination ul li a:hover {
   background: #29b6a6;
 }
 #dj-classifieds .djcf_items_blog .item_desc .label_title {
-  background: url("../images/style1/desc.png") no-repeat left top;
+  background: url("../assets/desc.png") no-repeat left top;
 }
 #dj-classifieds .blog_det .price .label_title {
-  background: url("../images/style1/price.png") no-repeat left top;
+  background: url("../assets/price.png") no-repeat left top;
 }
 #dj-classifieds .blog_det .region .label_title {
-  background: url("../images/style1/region.png") no-repeat left top;
+  background: url("../assets/region.png") no-repeat left top;
 }
 #dj-classifieds .blog_det .category .label_title {
-  background: url("../images/style1/category.png") no-repeat left top;
+  background: url("../assets/category.png") no-repeat left top;
 }
 #dj-classifieds .blog_det .cf_box .label_title {
-  background: url("../images/style1/details.png") no-repeat left top;
+  background: url("../assets/details.png") no-repeat left top;
 }
 #dj-classifieds .dj-item .general_det .djcf_contact span.row_label {
-  background: url("../images/style1/desc.png") no-repeat left top;
+  background: url("../assets/desc.png") no-repeat left top;
 }
 #dj-classifieds .dj-item .general_det .added span.row_label {
-  background: url("../images/style1/added.png") no-repeat left top;
+  background: url("../assets/added.png") no-repeat left top;
 }
 #dj-classifieds .dj-item .general_det .user_name span.row_label {
-  background: url("../images/style1/created.png") no-repeat left top;
+  background: url("../assets/created.png") no-repeat left top;
 }
 #dj-classifieds .dj-item .description h2 {
-  background: url("../images/style1/desc.png") no-repeat left top;
+  background: url("../assets/desc.png") no-repeat left top;
 }
 #dj-classifieds .dj-item .custom_det h2 {
-  background: url("../images/style1/details.png") no-repeat left top;
+  background: url("../assets/details.png") no-repeat left top;
 }
 #dj-classifieds .dj-item .localization_det h2 {
-  background: url("../images/style1/region.png") no-repeat left top;
+  background: url("../assets/region.png") no-repeat left top;
 }
 #dj-classifieds .dj-item .additional h2 {
-  background: url("../images/style1/details.png") no-repeat left top;
+  background: url("../assets/details.png") no-repeat left top;
 }
 #dj-classifieds .dj-item .video_box h2 {
-  background: url("../images/style1/video.png") no-repeat left top;
+  background: url("../assets/video.png") no-repeat left top;
 }
 #dj-classifieds .dj-item .djcf_comments h2 {
-  background: url("../images/style1/comments.png") no-repeat left top;
+  background: url("../assets/comments.png") no-repeat left top;
 }
 #dj-classifieds table.dj-items td.name h3 a:hover {
   color: #29b6a6;
@@ -384,20 +384,20 @@ div.pagination ul li a:hover {
 }
 .dj-tabber .dj-tab-indicator-right,
 .jm-module.white-ms .dj-tabber .dj-tab-indicator-right {
-  background: url("../images/style1/dj-tabber-arrow-right.png") no-repeat left center !important;
+  background: url("../assets/dj-tabber-arrow-right.png") no-repeat left center !important;
 }
 .dj-tabber .dj-tab-indicator-left,
 .jm-module.white-ms .dj-tabber .dj-tab-indicator-left {
-  background: url("../images/style1/dj-tabber-arrow-left.png") no-repeat left center !important;
+  background: url("../assets/dj-tabber-arrow-left.png") no-repeat left center !important;
 }
 .jm-bottom .dj-tabber .dj-tab-active {
   background: #94dbd3 !important;
 }
 .jm-bottom .dj-tabber .dj-tab-indicator-right {
-  background: url("../images/style1/dj-tabber-arrow-right-light.png") no-repeat left center !important;
+  background: url("../assets/dj-tabber-arrow-right-light.png") no-repeat left center !important;
 }
 .jm-bottom .dj-tabber .dj-tab-indicator-left {
-  background: url("../images/style1/dj-tabber-arrow-left-light.png") no-repeat left center !important;
+  background: url("../assets/dj-tabber-arrow-left-light.png") no-repeat left center !important;
 }
 .slider1-ms .dj-navigation-in .dj-next:hover,
 .slider1-ms .dj-navigation-in .dj-prev:hover,

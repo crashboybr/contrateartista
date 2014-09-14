@@ -1,0 +1,132 @@
+
+<script src="/assets/jquery.maskedinput-1.3.min" type="text/javascript"></script>
+
+<script type="text/javascript">
+
+	jQuery(function($){
+		       $("#contrate_backendbundle_contact_phone").mask("(99) 9999-9999");
+		       $("#campoTelefone").mask("(999) 999-9999");
+		});
+</script>
+
+{{ form_start(form, { 'attr': { 'class': 'form-horizontal', 'novalidate': 'novalidate' }}) }}
+	{{ form_errors(form) }}
+	<fieldset class="well">
+
+		
+
+		<div class="control-group {% if (form.name.vars.errors|length > 0) %}error{% endif %}">
+			<div class="control-label">
+			{{ form_label(form.name, 'Nome', { 'label_attr': {'class': 'required'} }) }}
+			</div>
+			<div class="controls">
+				{{ form_widget(form.name, { 'attr': { 'style': 'width:60%;' }}) }}
+				{% if (form.name.vars.errors|length > 0) %}
+                    <br /><span class="help-inline">{{ form.name.vars.errors[0].message }}</span>
+                {% endif %}
+			</div>
+		</div>
+
+		<div class="control-group {% if (form.email.vars.errors|length > 0) %}error{% endif %}">
+			<div class="control-label">
+			{{ form_label(form.email, 'Email', { 'label_attr': {'class': 'required'} }) }}
+			</div>
+			<div class="controls">
+				
+
+				{{ form_widget(form.email, { 'attr': { 'style': 'width:60%;' }}) }}
+				{% if (form.email.vars.errors|length > 0) %}
+                    <br /><span class="help-inline">{{ form.email.vars.errors[0].message }}</span>
+                {% endif %}
+			</div>
+		</div>
+
+		<div class="control-group {% if (form.phone.vars.errors|length > 0) %}error{% endif %}">
+			<div class="control-label">
+			{{ form_label(form.phone, 'Telefone', { 'label_attr': {'class': 'required'} }) }}
+			</div>
+			<div class="controls">
+				
+
+				{{ form_widget(form.phone, { 'attr': { 'style': 'width:60%;' }}) }}
+				{% if (form.phone.vars.errors|length > 0) %}
+                    <br /><span class="help-inline">{{ form.phone.vars.errors[0].message }}</span>
+                {% endif %}
+			</div>
+		</div>
+
+		<div class="control-group {% if (form.event.vars.errors|length > 0) %}error{% endif %}">
+			<div class="control-label">
+			{{ form_label(form.event, 'Tipo do Evento', { 'label_attr': {'class': 'required'} }) }}
+			</div>
+			<div class="controls">
+				
+
+				{{ form_widget(form.event, { 'attr': { 'style': 'width:60%;' }}) }}
+				{% if (form.event.vars.errors|length > 0) %}
+                    <br /><span class="help-inline">{{ form.event.vars.errors[0].message }}</span>
+                {% endif %}
+			</div>
+		</div>
+
+		<div class="control-group {% if (form.eventAt.vars.errors|length > 0) %}error{% endif %}">
+			<div class="control-label">
+			{{ form_label(form.eventAt, 'Data do Evento', { 'label_attr': {'class': 'required'} }) }}
+			</div>
+			<div class="controls">
+				
+
+				{{ form_widget(form.eventAt, { 'attr': { 'style': 'width:60%;' }}) }}
+				{% if (form.eventAt.vars.errors|length > 0) %}
+                    <br /><span class="help-inline">{{ form.eventAt.vars.errors[0].message }}</span>
+                {% endif %}
+			</div>
+		</div>
+
+		<div class="control-group {% if (form.city.vars.errors|length > 0) %}error{% endif %}">
+			<div class="control-label">
+			{{ form_label(form.city, 'Cidade', { 'label_attr': {'class': 'required'} }) }}
+			</div>
+			<div class="controls">
+				
+
+				{{ form_widget(form.city, { 'attr': { 'style': 'width:60%;' }}) }}
+				{% if (form.city.vars.errors|length > 0) %}
+                    <br /><span class="help-inline">{{ form.city.vars.errors[0].message }}</span>
+                {% endif %}
+			</div>
+		</div>
+
+		<div class="control-group {% if (form.state.vars.errors|length > 0) %}error{% endif %}">
+			<div class="control-label">
+			{{ form_label(form.state, 'Estado', { 'label_attr': {'class': 'required'} }) }}
+			</div>
+			<div class="controls">
+				
+
+				{{ form_widget(form.state, { 'attr': { 'style': 'width:60%;' }}) }}
+				{% if (form.state.vars.errors|length > 0) %}
+                    <br /><span class="help-inline">{{ form.state.vars.errors[0].message }}</span>
+                {% endif %}
+			</div>
+		</div>
+
+		<div class="control-group {% if (form.description.vars.errors|length > 0) %}error{% endif %}">
+			<div class="control-label">
+			{{ form_label(form.description, 'Descrição do Evento', { 'label_attr': {'class': 'required'} }) }}
+			</div>
+			<div class="controls">
+				
+
+				{{ form_widget(form.description, { 'attr': { 'style': 'width:60%;' }}) }}
+				{% if (form.description.vars.errors|length > 0) %}
+                    <br /><span class="help-inline">{{ form.description.vars.errors[0].message }}</span>
+                {% endif %}
+			</div>
+		</div>
+
+		<div class="controls">
+			{{ form_widget(form.submit, { 'attr': { 'class': 'btn btn-primary' }}) }}
+        </div>
+
+{{ form_end(form) }}

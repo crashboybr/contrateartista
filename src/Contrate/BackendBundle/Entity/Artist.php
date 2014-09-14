@@ -17,6 +17,12 @@ use Doctrine\Common\Collections\ArrayCollection;
  */
 class Artist
 {
+    public function __construct()
+    {
+        $this->contacts = new ArrayCollection();
+      
+    }
+
     /**
      * @var integer
      *
@@ -106,6 +112,11 @@ class Artist
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      */
     protected $user;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Contact", mappedBy="artist")
+     */
+    protected $contacts;
 
 
     /**
@@ -575,5 +586,38 @@ class Artist
     public function getStatus()
     {
         return $this->status;
+    }
+
+    /**
+     * Add contacts
+     *
+     * @param \Contrate\BackendBundle\Entity\Contact $contacts
+     * @return Artist
+     */
+    public function addContact(\Contrate\BackendBundle\Entity\Contact $contacts)
+    {
+        $this->contacts[] = $contacts;
+
+        return $this;
+    }
+
+    /**
+     * Remove contacts
+     *
+     * @param \Contrate\BackendBundle\Entity\Contact $contacts
+     */
+    public function removeContact(\Contrate\BackendBundle\Entity\Contact $contacts)
+    {
+        $this->contacts->removeElement($contacts);
+    }
+
+    /**
+     * Get contacts
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getContacts()
+    {
+        return $this->contacts;
     }
 }
