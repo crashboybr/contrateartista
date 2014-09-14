@@ -42,7 +42,7 @@
                           <a href="#"><img src="{{ asset(artist.pic) }}" style="width: 150px;" alt=""></a>
                         </td>
                         <td class="name">
-                          <h3><a class="title Tips1" href="#" title="" rel="">{{ artist.name }}</a></h3>
+                          <h3><a class="title Tips1" href="{{ path('artist_show', {'id': artist.id }) }}" title="" rel="">{{ artist.name }}</a></h3>
                         </td>
                         <td class="region">
                           <a href="#">{{ artist.category.name }}
