@@ -21,8 +21,24 @@ class DefaultController extends Controller
         // Example with parameter injected into translation "user.profile"
         //$breadcrumbs->addItem($txt, $url, array("%user%" => $user->getName()));
 
+        $total['Apresentadora'] = count($em->getRepository("ContrateBackendBundle:Artist")->findBy(array('categoryId' => 15)));
+        $total['Apresentador']  = count($em->getRepository("ContrateBackendBundle:Artist")->findBy(array('categoryId' => 16)));
+        $total['Atleta']        = count($em->getRepository("ContrateBackendBundle:Artist")->findBy(array('categoryId' => 17)));
+        $total['Ator']          = count($em->getRepository("ContrateBackendBundle:Artist")->findBy(array('categoryId' => 18)));
+        $total['Atriz']         = count($em->getRepository("ContrateBackendBundle:Artist")->findBy(array('categoryId' => 19)));
+        $total['Comediante']    = count($em->getRepository("ContrateBackendBundle:Artist")->findBy(array('categoryId' => 20)));
+        $total['DJ']            = count($em->getRepository("ContrateBackendBundle:Artist")->findBy(array('categoryId' => 21)));
+        $total['Jornalista']    = count($em->getRepository("ContrateBackendBundle:Artist")->findBy(array('categoryId' => 22)));
+        $total['Show']          = count($em->getRepository("ContrateBackendBundle:Artist")->findBy(array('categoryId' => 23)));
+        $total['Lutador']       = count($em->getRepository("ContrateBackendBundle:Artist")->findBy(array('categoryId' => 24)));
+        $total['Celebridade']   = count($em->getRepository("ContrateBackendBundle:Artist")->findBy(array('categoryId' => 25)));
+        $total['Teatro']        = count($em->getRepository("ContrateBackendBundle:Artist")->findBy(array('categoryId' => 26)));
+
+        
+
         $categories = $em->getRepository('ContrateBackendBundle:Category')->findAll();
-        return $this->render('ContrateFrontendBundle:Default:index.html.twig', array('categories' => $categories));
+        return $this->render('ContrateFrontendBundle:Default:index.html.twig', array(
+            'categories' => $categories, 'total' => $total));
     }
 
     public function searchAction($category)

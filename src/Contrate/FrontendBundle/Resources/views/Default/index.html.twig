@@ -23,7 +23,7 @@
               <div id="mod_djcf_search211" class="dj_cf_search">
                 <form action="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/category-table-layout?se=1" method="get" name="" id="form-search">
                   <input type="hidden" name="se" value="1">      
-                  <input type="text" size="12" name="search" class="inputbox first_input" value="Procurar um artista..." onfocus="if(this.value==&#39;What are you looking for...?&#39;) this.value=&#39;&#39;;" onblur="if (this.value==&#39;&#39;) this.value=&#39;What are you looking for...?&#39;;">
+                  <input type="text" size="12" name="search" class="inputbox first_input" placeholder="Procurar um artista..." onfocus="if(this.value==&#39;What are you looking for...?&#39;) this.value=&#39;&#39;;" onblur="if (this.value==&#39;&#39;) this.value=&#39;What are you looking for...?&#39;;">
 
                   <button type="submit" class="button btn">Search</button>
 
@@ -82,7 +82,7 @@
                 						<a href="{{ path('contrate_frontend_search', {'category': cat.id }) }}"><img src="{{ asset(cat.pic) }}" alt="{{ cat.name }}"></a>
                 						<div class="cat_title_desc">
                 							<h2>
-                								<a href="#">{{ cat.name }} <span>(3)</span></a>
+                								<a href="#">{{ cat.name }} <span>({{ total[cat.name] }})</span></a>
                 							</h2>
                 							<span class="cat_desc"></span>
                 						</div>
