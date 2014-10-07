@@ -5,13 +5,9 @@
 
 <div id="jm-breadcrumbs" class="clearfix">
   <div id="jm-breadcrumbs-in">
-    {{ wo_render_breadcrumbs() }}
-    <ul class="breadcrumb">
-      <li class="active">Você está em: &nbsp;</li>
-      
-      <li><a href="#" class="pathway">Home</a><span class="divider"><img src="/assets/arrow.png" alt=""></span></li>
-      <li><a href="#" class="pathway">Artistas</a><span class="divider"><img src="/assets/arrow.png" alt=""></span></li>
-      <li class="active"><span>Apresentador</span></li></ul>
+    
+    
+      {{ wo_render_breadcrumbs() }}
 
     </div>
   </div>
@@ -39,17 +35,17 @@
                       {% for artist in artists %}
                       <tr class="row0">
                         <td class="icon first" width="140px">
-                          <a href="#"><img src="{{ asset(artist.pic) }}" style="width: 150px;" alt=""></a>
+                          <a href="#"><img src="{{ asset(artist.pic) }}" style="width: 150px; height: 150px;" alt=""></a>
                         </td>
                         <td class="name">
                           <h3><a class="title Tips1" href="{{ path('artist_show', {'id': artist.id }) }}" title="" rel="">{{ artist.name }}</a></h3>
                         </td>
                         <td class="region">
-                          <a href="#">{{ artist.category.name }}
+                          <a href="{{ path('artist_show', {'id': artist.id }) }}">{{ artist.category.name }}
                           </a>
                         </td>
-                        <td class="date_exp">{{ artist.user.name }}</td>
-                        <td class="col_distance"><button type="submit" class="btn-listing">Contato</button></td>
+                        <td class="date_exp"><a href="{{ path('artist_show', {'id': artist.id }) }}">{{ artist.user.name }}</a></td>
+                        <td class="col_distance"><a href="{{ path('artist_show', {'id': artist.id }) }}"><button type="button" class="btn-listing">Contato</button></a></td>
                       </tr>
                       {% endfor %}
 

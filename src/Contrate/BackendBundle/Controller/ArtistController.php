@@ -106,6 +106,7 @@ class ArtistController extends Controller
      */
     public function showAction($id)
     {
+        
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('ContrateBackendBundle:Artist')->find($id);
@@ -123,6 +124,17 @@ class ArtistController extends Controller
         $form->add('submit', 'submit', array('label' => 'Enviar'));
 
         $form->add('artistId', 'hidden', array('data' => $id));
+
+        $breadcrumbs = $this->get("white_october_breadcrumbs");
+
+        $breadcrumbs->addItem("Home", $this->get("router")->generate("contrate_frontend_homepage"));
+
+        $breadcrumbs->addItem($entity->getCategory()->getName(), $this->get("router")
+            ->generate("contrate_frontend_search", array('category' => $entity->getCategory()->getId())));
+
+
+        $breadcrumbs->addItem($entity->getName());
+
 
         return $this->render('ContrateBackendBundle:Artist:show.html.twig', array(
             'artist'      => $entity,

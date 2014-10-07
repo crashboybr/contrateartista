@@ -19,15 +19,11 @@
 
         {% endfor %}
         
-    <div id="jm-breadcrumbs" class="clearfix">
+        <div id="jm-breadcrumbs" class="clearfix">
       <div id="jm-breadcrumbs-in">
-
-        <ul class="breadcrumb">
-         <li class="active">Você está em: &nbsp;</li><li><a href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/" class="pathway">Home</a><span class="divider"><img src="/assets/arrow.png" alt=""></span></li><li><a href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/classifieds" class="pathway">celebridades</a>
-         <span class="divider"><img src="/assets/arrow.png" alt=""></span></li><li class="active"><span>{{ artist.name }}</span></li></ul>
-
-     </div>
- </div>
+        {{ wo_render_breadcrumbs() }}
+      </div>
+    </div>
 
  <div id="jm-content-wrapper">
     <div id="jm-content-wrapper-in" style="margin-left:0;padding:0;">

@@ -80,14 +80,14 @@ class DefaultController extends Controller
             if (!$data['category']->isEmpty()) {
                 foreach ($data['category'] as $category)
                     $filters['category'][] = $category;
-
+                //var_dump($filters['category']);
                 $qb->andWhere('f.category in (:category)');
             }
 
             $qb->setParameters($filters);
             
             //$artists = $qb->getQuery()->getResult();
-            //var_dump($artists);exit;
+            //var_dump($qb->getQuery()->getSql());exit;
         }
         else {
             if ($category) {
@@ -112,7 +112,7 @@ class DefaultController extends Controller
             $artists = $paginator->paginate(
                 $qb->getQuery(),
                 $this->get('request')->query->get('page', 1)/*page number*/,
-                2/*limit per page*/
+                10/*limit per page*/
             );
 
         
