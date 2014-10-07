@@ -3255,7 +3255,7 @@ input.btn {
 }
 #jm-top-bar-mod .nav.menu > li a {
   padding: 0 20px;
-  color: #8d8884;
+  color: #FFF;
   font-size: 13px;
   font-weight: 600;
   border-left: 1px solid #625f58;
@@ -3269,7 +3269,22 @@ input.btn {
 #jm-top-bar-mod .nav.menu > li a.color {
   color: #fff;
   border-color: transparent;
+  background:#e68a01;
 }
+
+#jm-top-bar-mod .nav.menu > li:hover a.color{
+  color: #fff;
+  border-color: transparent;
+  background:#e56100;
+
+}
+
+#jm-top-bar-mod .nav.menu > li a.color {
+  color: #fff;
+  border-color: transparent;
+  background:#e68a01;
+}
+
 #jm-top-bar-mod .nav.menu > li.parent:after,
 #jm-top-bar-mod .nav.menu ul {
   display: none;
