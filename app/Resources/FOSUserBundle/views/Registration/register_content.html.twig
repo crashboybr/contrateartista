@@ -20,106 +20,134 @@ $(document).ready(function () {
 <div class="row">
 	<div class="twelvecol column ">
 	<h3>Cadastre-se agora!</h3>
-		<form action="{{ path('fos_user_registration_register') }}" id="form" {{ form_enctype(form) }} method="POST" class="new_entity_factories_free_entity_factory" novalidate>
+		<form action="{{ path('fos_user_registration_register') }}" id="form" {{ form_enctype(form) }} method="POST" class="form-horizontal" novalidate class="">
 	    	{{ form_errors(form) }}
 	    	{{ form_row(form._token) }} 
-	 
-		    <div class="inputLabel">
-		    	
-		    	
-				{{ form_widget(form.name, { 'attr': {'class': 'rounder', 'placeholder': 'Nome Completo' } }) }}
-				{% if (form.name.vars.errors|length > 0) %}
-		    		<div class="alert">
-						<p class="alert-text">{{ form.name.vars.errors[0].message }}</p>
-					</div>
-		    	{% endif %}
-			</div>
-
-			<div class="inputLabel">
-		    	
-		    	
-				{{ form_widget(form.type, { 'attr': {'class': 'rounder', 'placeholder': 'Tipo' } }) }}
-				{% if (form.type.vars.errors|length > 0) %}
-		    		<div class="alert">
-						<p class="alert-text">{{ form.type.vars.errors[0].message }}</p>
-					</div>
-		    	{% endif %}
-			</div>
-
-			<div class="inputLabel">
-		    	
-		    	
-				{{ form_widget(form.logo, { 'attr': {'class': 'rounder', 'placeholder': 'Tipo' } }) }}
-				{% if (form.logo.vars.errors|length > 0) %}
-		    		<div class="alert">
-						<p class="alert-text">{{ form.logo.vars.errors[0].message }}</p>
-					</div>
-		    	{% endif %}
-			</div>
-			<br />
-
-			<div class="inputLabel">
-		    	
-		    	
-				{{ form_widget(form.site, { 'attr': {'class': 'rounder', 'placeholder': 'Site' } }) }}
-				{% if (form.site.vars.errors|length > 0) %}
-		    		<div class="alert">
-						<p class="alert-text">{{ form.site.vars.errors[0].message }}</p>
-					</div>
-		    	{% endif %}
-			</div>
-
-			<div class="inputLabel">
-		    	
-		    	
-				{{ form_widget(form.phone, { 'attr': {'class': 'rounder', 'placeholder': 'Telefone' } }) }}
-				{% if (form.phone.vars.errors|length > 0) %}
-		    		<div class="alert">
-						<p class="alert-text">{{ form.phone.vars.errors[0].message }}</p>
-					</div>
-		    	{% endif %}
-			</div>
-
-			<div class="inputLabel">	
-					
-				{{ form_widget(form.username, { 'attr': {'class': 'rounder', 'placeholder': 'Apelido' }}) }}
-				{% if (form.username.vars.errors|length > 0) %}
-		    		<div class="alert">
-						<p class="alert-text">{{ form.username.vars.errors[0].message }}</p>
-					</div>
-		    	{% endif %}
-			</div>
-
-			<div class="inputLabel">
-				
-				{{ form_widget(form.email, { 'attr': {'class': 'rounder', 'placeholder': form.email.vars.label }}) }}
-				{% if (form.email.vars.errors|length > 0) %}
-		    		<div class="alert">
-						<p class="alert-text">{{ form.email.vars.errors[0].message }}</p>
-					</div>
-		    	{% endif %}
-			</div>
-
-			{% for passwordField in form.plainPassword %}
-			    <div class="inputLabel">
-			    	
-			        {{ form_widget(passwordField, { 'attr': {'class': 'rounder', 'placeholder': passwordField.vars.label }}) }}
-			        {% if (passwordField.vars.errors|length > 0) %}
-		    			<div class="alert">
-							<p class="alert-text">{{ passwordField.vars.errors[0].message }}</p>
+	 			<fieldset class="well">
+					<div class="control-group">
+						<div class="control-label">
+							<label id="username-lbl" for="username" class=" required">Nome Completo<span class="star"></span></label>						
 						</div>
-		    		{% endif %}
-			        
-			        
-			    </div>
-			{% endfor %}
+						<div class="controls">
+							{{ form_widget(form.name, { 'attr': {'class': 'rounder', 'style': 'width: 50%;' } }) }}
+						</div>
 
-				
-		
+						{% if (form.name.vars.errors|length > 0) %}
+				    		<div class="alert">
+								<p class="alert-text">{{ form.name.vars.errors[0].message }}</p>
+							</div>
+				    	{% endif %}
+					</div>
 
-		    <div>
-		        <input class="ButtonRegister" type="submit" value="Cadastre-se. É grátis!" />
-		    </div>
+					<div class="control-group">
+						<div class="control-label">
+							<label id="username-lbl" for="username" class=" required">Tipo<span class="star"></span></label>						
+						</div>
+						<div class="controls">
+							{{ form_widget(form.type, { 'attr': {'class': 'rounder', 'style': 'width: 50%;' } }) }}
+						</div>
+						
+						{% if (form.type.vars.errors|length > 0) %}
+				    		<div class="alert">
+								<p class="alert-text">{{ form.type.vars.errors[0].message }}</p>
+							</div>
+				    	{% endif %}
+					</div>
+
+					<div class="control-group">
+						<div class="control-label">
+							<label id="username-lbl" for="username" class=" required">Logo<span class="star"></span></label>						
+						</div>
+						<div class="controls">
+							{{ form_widget(form.logo, { 'attr': {'class': 'rounder', 'style': 'width: 50%;' } }) }}
+						</div>
+						
+						{% if (form.logo.vars.errors|length > 0) %}
+				    		<div class="alert">
+								<p class="alert-text">{{ form.logo.vars.errors[0].message }}</p>
+							</div>
+				    	{% endif %}
+					</div>
+
+					<div class="control-group">
+						<div class="control-label">
+							<label id="username-lbl" for="username" class=" required">Site<span class="star"></span></label>						
+						</div>
+						<div class="controls">
+							{{ form_widget(form.site, { 'attr': {'class': 'rounder', 'style': 'width: 50%;' } }) }}
+						</div>
+						
+						{% if (form.site.vars.errors|length > 0) %}
+				    		<div class="alert">
+								<p class="alert-text">{{ form.site.vars.errors[0].message }}</p>
+							</div>
+				    	{% endif %}
+					</div>
+
+					<div class="control-group">
+						<div class="control-label">
+							<label id="username-lbl" for="username" class=" required">Telefone<span class="star"></span></label>						
+						</div>
+						<div class="controls">
+							{{ form_widget(form.phone, { 'attr': {'class': 'rounder', 'style': 'width: 50%;' } }) }}
+						</div>
+						
+						{% if (form.phone.vars.errors|length > 0) %}
+				    		<div class="alert">
+								<p class="alert-text">{{ form.phone.vars.errors[0].message }}</p>
+							</div>
+				    	{% endif %}
+					</div>
+
+					<div class="control-group">
+						<div class="control-label">
+							<label id="username-lbl" for="username" class=" required">Login<span class="star"></span></label>						
+						</div>
+						<div class="controls">
+							{{ form_widget(form.username, { 'attr': {'class': 'rounder', 'style': 'width: 50%;' } }) }}
+						</div>
+						
+						{% if (form.username.vars.errors|length > 0) %}
+				    		<div class="alert">
+								<p class="alert-text">{{ form.username.vars.errors[0].message }}</p>
+							</div>
+				    	{% endif %}
+					</div>
+
+					<div class="control-group">
+						<div class="control-label">
+							<label id="username-lbl" for="username" class=" required">Email<span class="star"></span></label>						
+						</div>
+						<div class="controls">
+							{{ form_widget(form.email, { 'attr': {'class': 'rounder', 'style': 'width: 50%;' } }) }}
+						</div>
+						
+						{% if (form.email.vars.errors|length > 0) %}
+				    		<div class="alert">
+								<p class="alert-text">{{ form.email.vars.errors[0].message }}</p>
+							</div>
+				    	{% endif %}
+					</div>
+					{% for passwordField in form.plainPassword %}
+						<div class="control-group">
+							<div class="control-label">
+								<label id="username-lbl" for="username" class=" required">Senha<span class="star"></span></label>						
+							</div>
+							<div class="controls">
+								{{ form_widget(passwordField, { 'attr': {'class': 'rounder', 'style': 'width: 50%;' } }) }}
+							</div>
+							
+							{% if (passwordField.vars.errors|length > 0) %}
+					    		<div class="alert">
+									<p class="alert-text">{{ passwordField.vars.errors[0].message }}</p>
+								</div>
+					    	{% endif %}
+						</div>
+					{% endfor %}
+					<div class="controls">
+						<button type="submit" class="btn btn-primary">Cadastrar</button>
+					</div>
+              </fieldset>
 		</form>
 	</div>
 </div>
