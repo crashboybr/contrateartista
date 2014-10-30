@@ -3,27 +3,29 @@
 {% block body -%}
 <section id="jm-main" class="container clearfix">
   <div id="jm-main-space">
-    {% for flashMessage in app.session.flashbag.get('error') %}
 
-            <div class="custom" style="">
-                <p class="alerta" style="text-align: center;">{{ flashMessage }}</p>
-            </div>  
-
-        {% endfor %}
-
-        {% for flashMessage in app.session.flashbag.get('success') %} 
-
-            <div class="custom">
-                <p class="alerta-sucess" style="text-align: center;"><img src="/assets/check-sucesso.png" width="28" height="25">{{ flashMessage }}</p><br/>
-            </div>
-
-        {% endfor %}
-        
+    
         <div id="jm-breadcrumbs" class="clearfix">
       <div id="jm-breadcrumbs-in">
         {{ wo_render_breadcrumbs() }}
       </div>
     </div>
+
+    {% for flashMessage in app.session.flashbag.get('error') %}
+
+        <div class="custom" style="margin-bottom: 20px;">
+            <p class="alerta" style="text-align: center;">{{ flashMessage }}</p>
+        </div>  
+
+    {% endfor %}
+
+    {% for flashMessage in app.session.flashbag.get('success') %} 
+
+        <div class="custom" style="margin-bottom: 20px;">
+            <p class="alerta-sucess" style="text-align: center;"><img src="/assets/check-sucesso.png" width="28" height="25">{{ flashMessage }}</p><br/>
+        </div>
+
+    {% endfor %}
 
  <div id="jm-content-wrapper">
     <div id="jm-content-wrapper-in" style="margin-left:0;padding:0;">

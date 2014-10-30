@@ -33,9 +33,7 @@ $(document).ready(function () {
 						</div>
 
 						{% if (form.name.vars.errors|length > 0) %}
-				    		<div class="alert">
-								<p class="alert-text">{{ form.name.vars.errors[0].message }}</p>
-							</div>
+								<p class="alerta">{{ form.name.vars.errors[0].message }}</p>
 				    	{% endif %}
 					</div>
 
@@ -48,9 +46,7 @@ $(document).ready(function () {
 						</div>
 						
 						{% if (form.type.vars.errors|length > 0) %}
-				    		<div class="alert">
-								<p class="alert-text">{{ form.type.vars.errors[0].message }}</p>
-							</div>
+								<p class="alerta">{{ form.type.vars.errors[0].message }}</p>
 				    	{% endif %}
 					</div>
 
@@ -63,9 +59,7 @@ $(document).ready(function () {
 						</div>
 						
 						{% if (form.logo.vars.errors|length > 0) %}
-				    		<div class="alert">
-								<p class="alert-text">{{ form.logo.vars.errors[0].message }}</p>
-							</div>
+								<p class="alerta">{{ form.logo.vars.errors[0].message }}</p>
 				    	{% endif %}
 					</div>
 
@@ -78,9 +72,7 @@ $(document).ready(function () {
 						</div>
 						
 						{% if (form.site.vars.errors|length > 0) %}
-				    		<div class="alert">
-								<p class="alert-text">{{ form.site.vars.errors[0].message }}</p>
-							</div>
+								<p class="alerta">{{ form.site.vars.errors[0].message }}</p>
 				    	{% endif %}
 					</div>
 
@@ -93,9 +85,7 @@ $(document).ready(function () {
 						</div>
 						
 						{% if (form.phone.vars.errors|length > 0) %}
-				    		<div class="alert">
-								<p class="alert-text">{{ form.phone.vars.errors[0].message }}</p>
-							</div>
+								<p class="alerta">{{ form.phone.vars.errors[0].message }}</p>
 				    	{% endif %}
 					</div>
 
@@ -108,9 +98,7 @@ $(document).ready(function () {
 						</div>
 						
 						{% if (form.username.vars.errors|length > 0) %}
-				    		<div class="alert">
-								<p class="alert-text">{{ form.username.vars.errors[0].message }}</p>
-							</div>
+								<p class="alerta">{{ form.username.vars.errors[0].message }}</p>
 				    	{% endif %}
 					</div>
 
@@ -123,9 +111,7 @@ $(document).ready(function () {
 						</div>
 						
 						{% if (form.email.vars.errors|length > 0) %}
-				    		<div class="alert">
-								<p class="alert-text">{{ form.email.vars.errors[0].message }}</p>
-							</div>
+								<p class="alerta">{{ form.email.vars.errors[0].message }}</p>
 				    	{% endif %}
 					</div>
 					{% for passwordField in form.plainPassword %}
@@ -138,9 +124,7 @@ $(document).ready(function () {
 							</div>
 							
 							{% if (passwordField.vars.errors|length > 0) %}
-					    		<div class="alert">
-									<p class="alert-text">{{ passwordField.vars.errors[0].message }}</p>
-								</div>
+									<p class="alerta">{{ passwordField.vars.errors[0].message }}</p>
 					    	{% endif %}
 						</div>
 					{% endfor %}
