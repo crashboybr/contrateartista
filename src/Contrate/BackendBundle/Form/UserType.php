@@ -10,14 +10,24 @@ class UserType extends BaseType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         parent::buildForm($builder, $options);
-
-        // add your custom field
+        $choices = array(
+            'Empresário' => 'Empresário', 
+            'Empresa' => 'Empresa', 
+            'cerimonialista' => 'Cerimonialista',
+            'Produtor' => 'Produtor',
+            'Produtor' => 'Prefeitura',
+            'Agência' => 'Agência',
+            'Outros' => 'Outros'
+            );
+       // add your custom field
         $builder->add('name');
-        $builder->add('type', 'choice', array('choices' => array('empresario' => 'Empresário', 'empresa' => 'Empresa')));
-        $builder->add('logo');
+        $builder->add('type', 'choice', 
+            array('choices' => $choices));
+        //$builder->add('logo');
         $builder->add('site');
         $builder->add('phone');
-        $builder->add('logo', 'file');
+        $builder->add('agency');
+        //$builder->add('logo', 'file');
         //$builder->add('language');
 
         //...............

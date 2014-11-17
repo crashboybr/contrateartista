@@ -3906,3 +3906,13 @@ a.close {
   -o-transition: none;
   transition: none;
 }
+
+
+.btn-listing {
+    color: #FFF;
+    background: #189e8f;
+    background: #189e8f;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 15px 5px 15px;
+}

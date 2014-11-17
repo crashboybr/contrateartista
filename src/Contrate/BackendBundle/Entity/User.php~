@@ -85,6 +85,12 @@ class User extends BaseUser
      */
     protected $site;
 
+    /**
+     * @ORM\Column(type="string", length=30,nullable=true)
+     *    
+     */
+    protected $agency;
+
     /* begin upload file */
     /**
      * @Assert\File(maxSize="4000000")

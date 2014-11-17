@@ -4,12 +4,17 @@ namespace Contrate\BackendBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * Contact
  *
  * @ORM\Table()
  * @ORM\Entity
+ * @ORM\HasLifecycleCallbacks
  */
 class Contact
 {
@@ -39,6 +44,10 @@ class Contact
      * @Assert\NotBlank(
      *      message = "Digite seu email"
      *)
+     * @Assert\Email(
+     *     message = "O email '{{ value }}' é inválido",
+     *     checkMX = true
+     * )
      */
     private $email;
 
@@ -49,6 +58,11 @@ class Contact
      * @Assert\NotBlank(
      *      message = "Digite seu telefone"
      *)
+     * @Assert\Regex(
+     *     pattern="/^\(\d{2}\)\s{0,1}\d{4,5}-\d{4}$/",
+     *     match=true,
+     *     message="Telefone Inválido. Formato: (99) 9999-9999"
+     * )
      */
     private $phone;
 
@@ -421,5 +435,44 @@ class Contact
     public function getArtistId()
     {
         return $this->artistId;
+    }
+
+    /**
+     * Set artist
+     *
+     * @param \Contrate\BackendBundle\Entity\Artist $artist
+     * @return Contact
+     */
+    public function setArtist(\Contrate\BackendBundle\Entity\Artist $artist = null)
+    {
+        $this->artist = $artist;
+
+        return $this;
+    }
+
+    /**
+     * Get artist
+     *
+     * @return \Contrate\BackendBundle\Entity\Artist 
+     */
+    public function getArtist()
+    {
+        return $this->artist;
+    }
+
+    /**
+     * Now we tell doctrine that before we persist or update we call the updatedTimestamps() function.
+     *
+     * @ORM\PrePersist
+     * @ORM\PreUpdate
+     */
+    public function updatedTimestamps()
+    {
+        $this->setUpdatedAt(new \DateTime(date('Y-m-d H:i:s')));
+
+        if($this->getCreatedAt() == null)
+        {
+            $this->setCreatedAt(new \DateTime(date('Y-m-d H:i:s')));
+        }
     }
 }

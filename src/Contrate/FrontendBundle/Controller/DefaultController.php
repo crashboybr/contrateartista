@@ -77,7 +77,7 @@ class DefaultController extends Controller
                 //$artists = $em->getRepository('ContrateBackendBundle:Artist')->findBy(array('name' => $query));
             }
 
-            if (!$data['category']->isEmpty()) {
+            if (isset($data['category']) && !$data['category']->isEmpty()) {
                 foreach ($data['category'] as $category)
                     $filters['category'][] = $category;
                 //var_dump($filters['category']);
@@ -117,6 +117,7 @@ class DefaultController extends Controller
 
         
 
-        return $this->render('ContrateFrontendBundle:Default:search.html.twig', array('artists' => $artists, 'filterForm' => $filterForm->createView()));
+        return $this->render('ContrateFrontendBundle:Default:search.html.twig', 
+            array('artists' => $artists, 'filterForm' => $filterForm->createView()));
     }
 }

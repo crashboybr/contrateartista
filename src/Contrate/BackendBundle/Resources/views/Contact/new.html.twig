@@ -48,7 +48,7 @@
 			<div class="controls">
 				
 
-				{{ form_widget(form.phone, { 'attr': { 'style': 'width:60%;' }}) }}
+				{{ form_widget(form.phone, { 'attr': { 'style': 'width:20%;' }}) }}
 				{% if (form.phone.vars.errors|length > 0) %}
                     <br /><span class="help-inline">{{ form.phone.vars.errors[0].message }}</span>
                 {% endif %}
@@ -76,7 +76,7 @@
 			<div class="controls">
 				
 
-				{{ form_widget(form.eventAt, { 'attr': { 'style': 'width:60%;' }}) }}
+				{{ form_widget(form.eventAt, { 'attr': { 'style': 'width:20%;' }}) }}
 				{% if (form.eventAt.vars.errors|length > 0) %}
                     <br /><span class="help-inline">{{ form.eventAt.vars.errors[0].message }}</span>
                 {% endif %}

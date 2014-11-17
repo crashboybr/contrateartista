@@ -85,6 +85,12 @@ class User extends BaseUser
      */
     protected $site;
 
+    /**
+     * @ORM\Column(type="string", length=30,nullable=true)
+     *    
+     */
+    protected $agency;
+
     /* begin upload file */
     /**
      * @Assert\File(maxSize="4000000")
@@ -361,5 +367,28 @@ class User extends BaseUser
     public function getArtists()
     {
         return $this->artists;
+    }
+
+    /**
+     * Set agency
+     *
+     * @param string $agency
+     * @return User
+     */
+    public function setAgency($agency)
+    {
+        $this->agency = $agency;
+
+        return $this;
+    }
+
+    /**
+     * Get agency
+     *
+     * @return string 
+     */
+    public function getAgency()
+    {
+        return $this->agency;
     }
 }

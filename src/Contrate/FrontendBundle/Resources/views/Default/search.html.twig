@@ -30,6 +30,11 @@
                   </div>
                 </div>
                 <div class="items">
+                  {% if artists.count == 0 %}
+                  <div class="custom">
+                          <p class="alerta" style="text-align: center;">Não foram encontrados artistas para a sua busca!</p>
+                  </div>
+                  {% endif %}
                   <table class="dj-items" width="100%">
                     <tbody>
                       {% for artist in artists %}

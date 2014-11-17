@@ -3,6 +3,14 @@
 {% block body %}
 
 {% trans_default_domain 'FOSUserBundle' %}
+<script src="/assets/jquery.maskedinput-1.3.min" type="text/javascript"></script>
+
+<script type="text/javascript">
+
+	jQuery(function($){
+		       $("#fos_user_registration_form_phone").mask("(99) 9999-9999");
+		});
+</script>
 <script type="text/javascript">
 
 $(document).ready(function () {
@@ -39,7 +47,20 @@ $(document).ready(function () {
 
 					<div class="control-group">
 						<div class="control-label">
-							<label id="username-lbl" for="username" class=" required">Tipo<span class="star"></span></label>						
+							<label id="username-lbl" for="username" class=" required">Email<span class="star"></span></label>						
+						</div>
+						<div class="controls">
+							{{ form_widget(form.email, { 'attr': {'class': 'rounder', 'style': 'width: 50%;' } }) }}
+						</div>
+						
+						{% if (form.email.vars.errors|length > 0) %}
+								<p class="alerta">{{ form.email.vars.errors[0].message }}</p>
+				    	{% endif %}
+					</div>
+
+					<div class="control-group">
+						<div class="control-label">
+							<label id="username-lbl" for="username" class=" required">Você é um(a)<span class="star"></span></label>						
 						</div>
 						<div class="controls">
 							{{ form_widget(form.type, { 'attr': {'class': 'rounder', 'style': 'width: 50%;' } }) }}
@@ -49,7 +70,7 @@ $(document).ready(function () {
 								<p class="alerta">{{ form.type.vars.errors[0].message }}</p>
 				    	{% endif %}
 					</div>
-
+					{#
 					<div class="control-group">
 						<div class="control-label">
 							<label id="username-lbl" for="username" class=" required">Logo<span class="star"></span></label>						
@@ -61,11 +82,24 @@ $(document).ready(function () {
 						{% if (form.logo.vars.errors|length > 0) %}
 								<p class="alerta">{{ form.logo.vars.errors[0].message }}</p>
 				    	{% endif %}
+					</div>#}
+
+					<div class="control-group">
+						<div class="control-label">
+							<label id="username-lbl" for="agency" class="">Nome da Agência</label>						
+						</div>
+						<div class="controls">
+							{{ form_widget(form.agency, { 'attr': {'class': 'rounder', 'style': 'width: 50%;' } }) }}
+						</div>
+						
+						{% if (form.agency.vars.errors|length > 0) %}
+								<p class="alerta">{{ form.agency.vars.errors[0].message }}</p>
+				    	{% endif %}
 					</div>
 
 					<div class="control-group">
 						<div class="control-label">
-							<label id="username-lbl" for="username" class=" required">Site<span class="star"></span></label>						
+							<label id="username-lbl" for="username" class="">Site</label>						
 						</div>
 						<div class="controls">
 							{{ form_widget(form.site, { 'attr': {'class': 'rounder', 'style': 'width: 50%;' } }) }}
@@ -102,18 +136,7 @@ $(document).ready(function () {
 				    	{% endif %}
 					</div>
 
-					<div class="control-group">
-						<div class="control-label">
-							<label id="username-lbl" for="username" class=" required">Email<span class="star"></span></label>						
-						</div>
-						<div class="controls">
-							{{ form_widget(form.email, { 'attr': {'class': 'rounder', 'style': 'width: 50%;' } }) }}
-						</div>
-						
-						{% if (form.email.vars.errors|length > 0) %}
-								<p class="alerta">{{ form.email.vars.errors[0].message }}</p>
-				    	{% endif %}
-					</div>
+					
 					{% for passwordField in form.plainPassword %}
 						<div class="control-group">
 							<div class="control-label">

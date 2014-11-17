@@ -11,7 +11,7 @@
 
             <div class="custom">
 
-              <div class="jm-custom-title">Todos os famosos do Brasil!</div>
+              <div class="jm-custom-title">Todos os artistas do Brasil num só lugar</div>
               <div class="jm-custom-subtitle">Aqui você poderá encontrar o seu artista preferido</div></div>
 
             </div>
@@ -21,9 +21,8 @@
           <div class="jm-module-in">
             <div class="jm-module-content clearfix">
               <div id="mod_djcf_search211" class="dj_cf_search">
-                <form action="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/category-table-layout?se=1" method="get" name="" id="form-search">
-                  <input type="hidden" name="se" value="1">      
-                  <input type="text" size="12" name="search" class="inputbox first_input" placeholder="Procurar um artista..." onfocus="if(this.value==&#39;What are you looking for...?&#39;) this.value=&#39;&#39;;" onblur="if (this.value==&#39;&#39;) this.value=&#39;What are you looking for...?&#39;;">
+                <form action="{{ path('contrate_frontend_search') }}" method="post" name="" id="form-search">
+                  <input type="text" size="12" name="q" class="inputbox first_input" placeholder="Procurar um artista..." onfocus="if(this.value==&#39;What are you looking for...?&#39;) this.value=&#39;&#39;;" onblur="if (this.value==&#39;&#39;) this.value=&#39;What are you looking for...?&#39;;">
 
                   <button type="submit" class="button btn">Buscar</button>
 
