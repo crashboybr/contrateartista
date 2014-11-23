@@ -6,8 +6,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use Contrate\BackendBundle\Entity\Artist;
+use Contrate\BackendBundle\Entity\ArtistImage;
 use Contrate\BackendBundle\Entity\Contact;
 use Contrate\BackendBundle\Form\ArtistType;
+use Contrate\BackendBundle\Form\ArtistImageType;
 use Contrate\BackendBundle\Form\ContactType;
 
 /**
@@ -47,11 +49,28 @@ class ArtistController extends Controller
                 throw $this->createNotFoundException('Voce precisa estar logado!');
             }
 
+            foreach ($entity->getArtistImages() as $artistImage)
+            {
+                
+                $artistImage->setArtists($entity);
+                $file = $artistImage->getPic();
+                $artistImage->setPic(null);
+                $artistImage->setFile($file);
+            }
+
             $em = $this->getDoctrine()->getManager();
             $entity->setUser($user);
             $entity->setStatus(-1);
             $em->persist($entity);
             $em->flush();
+
+            $img = $entity->getArtistImages();
+            if ($img) 
+            {
+                $entity->setDefaultImg($img[0]->getPic());
+                $em->persist($entity);
+                $em->flush();
+            }
 
             $this->get('session')->getFlashBag()->add(
                         'success',
@@ -75,6 +94,15 @@ class ArtistController extends Controller
      */
     private function createCreateForm(Artist $entity)
     {
+        $artist_image = new ArtistImage();
+        $entity->addArtistImage($artist_image);
+
+        $artist_image = new ArtistImage();
+        $entity->addArtistImage($artist_image);
+
+        $artist_image = new ArtistImage();
+        $entity->addArtistImage($artist_image);
+
         $form = $this->createForm(new ArtistType(), $entity, array(
             'action' => $this->generateUrl('artist_create'),
             'method' => 'POST',
@@ -93,10 +121,12 @@ class ArtistController extends Controller
     {
         $entity = new Artist();
         $form   = $this->createCreateForm($entity);
+        $me = $this->getUser();
 
         return $this->render('ContrateBackendBundle:Artist:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
+            'me' => $me
         ));
     }
 

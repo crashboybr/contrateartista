@@ -1,6 +1,39 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
+<script src="/assets/jquery-1.5.2.min.js" type="text/javascript"></script>
+<script src="/assets/jquery.cycle.all.js" type="text/javascript"></script>
+
+<script language="javascript">
+$(document).ready(function(){
+
+    $('#slider1').cycle({
+        fx: 'scrollHorz', 
+        speed:  'slow', 
+        timeout: 0,
+        next:   '#next', 
+        prev:   '#prev',
+        pager:  '#thumb',
+         
+        pagerAnchorBuilder: function(idx, slide) { 
+            return '<li><a href="#"><img src="' + slide.src + '" style="width: 60px; height: 60px;" /></a></li>'; 
+        }  
+
+
+
+    });
+
+    $("#reply").validate({
+            //errorElement: "div",
+
+        });
+
+
+
+}); 
+</script>
+
+
 <section id="jm-main" class="container clearfix">
   <div id="jm-main-space">
 
@@ -46,9 +79,17 @@
                                         <div class="images_wrap" style="width:500px"><div class="images">
                                             <div class="djc_images">
                                                 <div class="djc_mainimage">
-                                                    <a id="djc_mainimagelink" rel="djc_lb_0" title="Leather Sofa" href="37_sofa1_thb.jpg">
-                                                        <img width="496px" id="djc_mainimage" alt="Leather Sofa" src="{{ asset(artist.pic) }}">
-                                                    </a>
+                                                      <div class="slider">
+                                                        <div id="slider1" style="margin-left: auto; margin-right: auto;">
+                                                              
+                                                                {% for img in artist.artistImages %}
+                                                                    {% if (img.pic != "initial") %}
+                                                                        <img width="" id="djc_mainimage" src="{{ asset(img.pic|imagine_filter('widen')) }}">
+                                                                    {% endif %}
+                                                                {% endfor %}
+                                                          </div>
+                                                        <ul id="thumb" style="margin-top: 25px;"></ul>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

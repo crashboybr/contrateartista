@@ -51,7 +51,7 @@
 								<fieldset class="well">
 									<div class="control-group">
 										<div class="control-label">
-											<label id="username-lbl" for="username" class=" required">Nome do Artista<span class="star">&nbsp;*</span></label>						
+											<label id="username-lbl" for="username" class=" required">Nome do Artista</label>						
 										</div>
 										<div class="controls">
 											{{ form_widget(form.name, { attr: { 'size': '50' }}) }}	
@@ -62,7 +62,7 @@
 									</div>
 									<div class="control-group">
 										<div class="control-label">
-											<label id="password-lbl" for="password" class=" required">Categoria<span class="star">&nbsp;*</span></label>	
+											<label id="password-lbl" for="password" class=" required">Categoria</label>	
 										</div>
 										<div class="controls">
 
@@ -75,10 +75,10 @@
 									</div>
 									<div class="control-group">
 										<div class="control-label">
-											<label id="password-lbl" for="password" class=" required">Nome da agência<span class="star">&nbsp;*</span></label>						
+											<label id="password-lbl" for="password" class="">Nome da agência</label>
 										</div>
 										<div class="controls">
-											{{ form_widget(form.agency, { attr: { 'size': '50' }}) }}	
+											{{ form_widget(form.agency, { attr: { 'size': '50', 'value': me.agency }}) }}	
 
 											{% if (form.agency.vars.errors|length > 0) %}
 											<p style="color: #993300; background-color: #f7e5e5; border: 1px solid #dc9f9c; width: 340px; text-align: center;">{{ form.agency.vars.errors[0].message }}</p>
@@ -87,7 +87,7 @@
 									</div>
 									<div class="control-group">
 										<div class="control-label">
-											<label id="password-lbl" for="password" class=" required">Site<span class="star">&nbsp;*</span></label>						
+											<label id="password-lbl" for="password" class=" required">Site</label>						
 										</div>
 										<div class="controls">
 											{{ form_widget(form.website, { attr: { 'size': '50' }}) }}
@@ -99,10 +99,10 @@
 
 									<div class="control-group">
 										<div class="control-label">
-											<label id="password-lbl" for="password2" class=" required">Telefone de contato<span class="star">&nbsp;*</span></label>
+											<label id="password-lbl" for="password2" class=" required">Telefone de contato</label>
 										</div>
 										<div class="controls">
-											{{ form_widget(form.phone, { attr: { 'size': '50' }}) }}
+											{{ form_widget(form.phone, { attr: { 'size': '50', 'value': me.phone }}) }}
 											{% if (form.phone.vars.errors|length > 0) %}
 											<p style="color: #993300; background-color: #f7e5e5; border: 1px solid #dc9f9c; width: 340px; text-align: center;">{{ form.phone.vars.errors[0].message }}</p>
 											{% endif %}
@@ -111,7 +111,7 @@
 
 									<div class="control-group">
 										<div class="control-label">
-											<label id="password-lbl" for="password2" class=" required">Descrição do artista<span class="star">&nbsp;*</span></label>
+											<label id="password-lbl" for="password2" class=" required">Descrição do artista</label>
 										</div>
 										<div class="controls">
 											{{ form_widget(form.description, { attr: { 'style': 'width:450px;height:200px;' }}) }}	
@@ -122,15 +122,16 @@
 									</div>
 									<div class="control-group">
 										<div class="control-label">
-											<label id="password-lbl" for="password2" class=" required">Foto<span class="star">&nbsp;*</span></label>
+											<label id="password-lbl" for="password2" class=" required">Foto</label>
 										</div>
 										<div class="controls">
-											<img src="/assets/photo.gif" width="44" height="34">
-											{{ form_widget(form.file, { attr: { 'size': '50' }}) }}
+											
+											{% for artistImage in form.artist_images %}
+													<img src="/assets/photo.gif" width="44" height="34">
+											        {{ form_errors(artistImage) }}
+											        {{ form_widget(artistImage, { 'attr': { 'size': 50 }}) }}
+											{% endfor %}
 
-											{% if (form.file.vars.errors|length > 0) %}
-											<p style="color: #993300; background-color: #f7e5e5; border: 1px solid #dc9f9c; width: 340px; text-align: center;">{{ form.file.vars.errors[0].message }}</p>
-											{% endif %}
 										</div>
 									</div>
 									<p>&nbsp;</p>

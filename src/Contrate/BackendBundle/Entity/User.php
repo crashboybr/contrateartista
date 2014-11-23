@@ -57,6 +57,12 @@ class User extends BaseUser
     protected $type;
 
     /**
+     * @ORM\Column(type="string", length=30,nullable=true)
+     *    
+     */
+    protected $subtype;
+
+    /**
      * @ORM\Column(type="string", length=100,nullable=true)
      *    
      */
@@ -390,5 +396,28 @@ class User extends BaseUser
     public function getAgency()
     {
         return $this->agency;
+    }
+
+    /**
+     * Set subtype
+     *
+     * @param string $subtype
+     * @return User
+     */
+    public function setSubtype($subtype)
+    {
+        $this->subtype = $subtype;
+
+        return $this;
+    }
+
+    /**
+     * Get subtype
+     *
+     * @return string 
+     */
+    public function getSubtype()
+    {
+        return $this->subtype;
     }
 }

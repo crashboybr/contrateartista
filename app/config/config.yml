@@ -98,3 +98,30 @@ white_october_breadcrumbs:
     #locale:              null, so the default locale is used
     #translation_domain:  null, so the default domain is used
     viewTemplate:       "ContrateFrontendBundle:Default:breadcrumbs.html.twig"
+
+liip_imagine:
+    resolvers:
+       default:
+          web_path: ~
+
+    filter_sets:
+        cache: ~
+        my_thumb:
+            quality: 75
+            filters:
+                thumbnail: { size: [120, 90], mode: outbound }
+        vi:
+            quality: 100
+            filters:
+                resize: { size: [460, 0], mode: outbound }
+        crop2:
+            filters:
+                crop: { start: [100, 50], size: [460, 361] }
+        widen:
+            filters:
+                relative_resize: { heighten: 359 }    # Transforms 50x40 to 40x32
+        upscale:
+            filters:
+                upscale: { min: [460, 361] }
+
+

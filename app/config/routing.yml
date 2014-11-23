@@ -24,3 +24,10 @@ fos_user_resetting:
 fos_user_change_password:
     resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
     prefix: /perfil
+
+#_imagine:
+#    resource: .
+#    type:     imagine
+
+_liip_imagine:
+    resource: "@LiipImagineBundle/Resources/config/routing.xml"

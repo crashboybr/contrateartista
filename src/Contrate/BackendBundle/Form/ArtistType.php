@@ -23,7 +23,7 @@ class ArtistType extends AbstractType
                 'property' => 'name',
                 'empty_value' => 'Escolha uma Categoria',
                 ))
-            ->add('file', 'file')
+            ->add('artist_images', 'collection', array('type' => new ArtistImageType(), 'required' => false))
             ->add('agency')
             ->add('website')
             ->add('phone')
