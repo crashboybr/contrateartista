@@ -40,7 +40,7 @@
                       {% for artist in artists %}
                       <tr class="row0">
                         <td class="icon first" width="140px">
-                          <a href="#"><img src="{{ asset(artist.defaultImg) }}" style="width: 150px; height: 150px;" alt=""></a>
+                          <a href="{{ path('artist_show', {'id': artist.id }) }}"><img src="{{ asset(artist.defaultImg|imagine_filter('thumb')) }}" style="width: 150px; height: 150px;" alt=""></a>
                         </td>
                         <td class="name">
                           <h3><a class="title Tips1" href="{{ path('artist_show', {'id': artist.id }) }}" title="" rel="">{{ artist.name }}</a></h3>
