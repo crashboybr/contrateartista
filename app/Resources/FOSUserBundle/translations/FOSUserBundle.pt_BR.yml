@@ -54,7 +54,7 @@ registration:
             Para completar a validação da sua conta, clique no link: %confirmationUrl%
 
             Atenciosamente,
-            Equipe Aula Com Vc.
+            Equipe Contrate Artistas
 
 # Password resetting
 resetting:
@@ -76,7 +76,7 @@ resetting:
             Para redefinir sua senha, clique no link: %confirmationUrl%
 
             Atenciosamente,
-            Equipe Aula Com Vc.
+            Equipe Contrate Artistas
 
 # Global strings
 layout:

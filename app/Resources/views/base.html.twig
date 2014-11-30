@@ -94,9 +94,10 @@
         <ul class="nav menu">
         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
               <li class="item-527">
-                Olá {{ app.user.username|capitalize }}!
+                Olá {{ app.user.name|capitalize }}!
               </li>
-               | <a href="{{ path('fos_user_security_logout') }}" style="text-decoration: none;">Sair</a>
+               | <a href="{{ path('fos_user_security_logout') }}" style="text-decoration: none; margin-right: 10px;">Sair</a>
+
             
             <li class="item-530">
             <a class="color" href="{{ path('artist_new') }}">Inserir um artista gratis</a></li></ul>

@@ -34,7 +34,7 @@ twig:
 assetic:
     debug:          "%kernel.debug%"
     use_controller: false
-    bundles:        [ ]
+    bundles:        [ FOSUserBundle ]
     #java: /usr/bin/java
     filters:
         cssrewrite: ~
@@ -79,9 +79,12 @@ fos_user:
     registration:
         form:
             type: contrate_user_registration
+        confirmation:
+            enabled: true
     from_email:
         address:        nao-responda@contrateartista.com.br
         sender_name:    Equipe Contrate Artista
+
 
 knp_paginator:
     page_range: 2                      # default page range used in pagination control

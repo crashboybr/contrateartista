@@ -46,7 +46,9 @@
 													<div class="jm-module-content clearfix">
 
 														<div class="custom">
-															<p class="alerta" style="text-align: center;">{{ error|trans }}</strong></p>
+															<p class="alerta" style="text-align: center;">
+															{{ error.messageKey|trans(error.messageData, 'security') }}
+															</strong></p>
 														</div>
 
 													</div>
@@ -66,7 +68,7 @@
 										<input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />						 
 										<div class="control-group">
 											<div class="control-label">
-												<label id="username-lbl" for="username" class=" required">Login<span class="star">&nbsp;</span></label>						
+												<label id="username-lbl" for="username" class=" required">Apelido<span class="star">&nbsp;</span></label>						
 											</div>
 											<div class="controls">
 												<input class="validate-username" type="text" id="username" placeholder="digite seu email" name="_username" value="{{ last_username }}" aria-required="true" required="required" />

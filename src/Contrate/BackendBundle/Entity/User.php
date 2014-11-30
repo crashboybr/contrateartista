@@ -69,6 +69,36 @@ class User extends BaseUser
     protected $logo;
 
     /**
+     * @ORM\Column(type="string", length=100,nullable=true)
+     *    
+     */
+    protected $info;
+
+    /**
+     * @ORM\Column(type="string", length=100,nullable=true)
+     *    
+     */
+    protected $ordem_destaque;
+
+    /**
+     * @ORM\Column(type="string", length=100,nullable=true)
+     *    
+     */
+    protected $created_date;
+
+    /**
+     * @ORM\Column(type="string", length=100,nullable=true)
+     *    
+     */
+    protected $vip;
+
+    /**
+     * @ORM\Column(type="string", length=100,nullable=true)
+     *    
+     */
+    protected $arquivo;
+
+    /**
      * @ORM\Column(type="string", length=255,nullable=true)
      *    
      * @Assert\Regex(
@@ -92,7 +122,7 @@ class User extends BaseUser
     protected $site;
 
     /**
-     * @ORM\Column(type="string", length=30,nullable=true)
+     * @ORM\Column(type="string", length=30)
      *    
      */
     protected $agency;
