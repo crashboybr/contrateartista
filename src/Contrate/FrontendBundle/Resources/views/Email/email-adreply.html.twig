@@ -1,0 +1,18 @@
+{% block body %}
+Novo Contato<br />
+
+Nome: {{ entity.name }}<br />
+Email: {{ entity.email }}<br />
+Telefone: {{ entity.phone }}<br />
+Data do Evento: {{ entity.eventAt|date('d/m/y') }}<br />
+Local: {{ entity.city }} / {{ entity.state }}<br />
+Descrição do evento: {{ entity.description }}<br />
+
+
+
+{% endblock %}
+
+{% block subject -%}
+Contato Contrate Artista
+{% endblock %}
+

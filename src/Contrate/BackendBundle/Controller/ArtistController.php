@@ -192,12 +192,15 @@ class ArtistController extends Controller
         $form->handleRequest($request);
 
         if ($form->isValid()) {
+            
             $em = $this->getDoctrine()->getManager();
             $entity->setStatus(-1);
             $em->persist($entity);
             $em->flush();
 
             $this->get('session')->getFlashBag()->set('success', 'Formulário enviado com sucesso!');
+
+            $this->get('send_mail')->sendEmail($entity, 'adreply');
 
             return $this->redirect($this->generateUrl('artist_show', array('id' => $artist_id)));
         }
