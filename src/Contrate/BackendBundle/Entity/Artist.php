@@ -141,7 +141,7 @@ class Artist
     /**
      * @var string
      *
-     * @ORM\Column(name="default_img", type="string", length=255)
+     * @ORM\Column(name="default_img", type="string", length=255, nullable=true)
      */
     private $default_img;
 

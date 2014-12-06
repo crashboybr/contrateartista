@@ -42,6 +42,7 @@ class ArtistController extends Controller
         $entity = new Artist();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
+        $me = $this->getUser();
 
         if ($form->isValid()) {
             $user = $this->getUser();
@@ -60,11 +61,13 @@ class ArtistController extends Controller
 
             $em = $this->getDoctrine()->getManager();
             $entity->setUser($user);
+            $entity->setVisit(0);
             $entity->setStatus(-1);
             $em->persist($entity);
             $em->flush();
 
             $img = $entity->getArtistImages();
+
             if ($img) 
             {
                 $entity->setDefaultImg($img[0]->getPic());
@@ -82,6 +85,7 @@ class ArtistController extends Controller
         return $this->render('ContrateBackendBundle:Artist:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
+            'me'   => $me
         ));
     }
 
@@ -122,6 +126,7 @@ class ArtistController extends Controller
         $entity = new Artist();
         $form   = $this->createCreateForm($entity);
         $me = $this->getUser();
+        //var_dump($me);exit;
 
         return $this->render('ContrateBackendBundle:Artist:new.html.twig', array(
             'entity' => $entity,
