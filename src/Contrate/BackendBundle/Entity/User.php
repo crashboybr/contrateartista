@@ -450,4 +450,119 @@ class User extends BaseUser
     {
         return $this->subtype;
     }
+
+    /**
+     * Set info
+     *
+     * @param string $info
+     * @return User
+     */
+    public function setInfo($info)
+    {
+        $this->info = $info;
+
+        return $this;
+    }
+
+    /**
+     * Get info
+     *
+     * @return string 
+     */
+    public function getInfo()
+    {
+        return $this->info;
+    }
+
+    /**
+     * Set ordem_destaque
+     *
+     * @param string $ordemDestaque
+     * @return User
+     */
+    public function setOrdemDestaque($ordemDestaque)
+    {
+        $this->ordem_destaque = $ordemDestaque;
+
+        return $this;
+    }
+
+    /**
+     * Get ordem_destaque
+     *
+     * @return string 
+     */
+    public function getOrdemDestaque()
+    {
+        return $this->ordem_destaque;
+    }
+
+    /**
+     * Set created_date
+     *
+     * @param string $createdDate
+     * @return User
+     */
+    public function setCreatedDate($createdDate)
+    {
+        $this->created_date = $createdDate;
+
+        return $this;
+    }
+
+    /**
+     * Get created_date
+     *
+     * @return string 
+     */
+    public function getCreatedDate()
+    {
+        return $this->created_date;
+    }
+
+    /**
+     * Set vip
+     *
+     * @param string $vip
+     * @return User
+     */
+    public function setVip($vip)
+    {
+        $this->vip = $vip;
+
+        return $this;
+    }
+
+    /**
+     * Get vip
+     *
+     * @return string 
+     */
+    public function getVip()
+    {
+        return $this->vip;
+    }
+
+    /**
+     * Set arquivo
+     *
+     * @param string $arquivo
+     * @return User
+     */
+    public function setArquivo($arquivo)
+    {
+        $this->arquivo = $arquivo;
+
+        return $this;
+    }
+
+    /**
+     * Get arquivo
+     *
+     * @return string 
+     */
+    public function getArquivo()
+    {
+        return $this->arquivo;
+    }
 }

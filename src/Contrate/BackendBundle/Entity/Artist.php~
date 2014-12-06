@@ -146,6 +146,13 @@ class Artist
     private $default_img;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="visit", type="integer")
+     */
+    private $visit;
+
+    /**
      * Get id
      *
      * @return integer 
@@ -534,5 +541,30 @@ class Artist
     public function getArtistImages()
     {
         return $this->artist_images;
+    }
+
+    /**
+     * Set default_img
+     *
+     * @param string $defaultImg
+     * @return Artist
+     */
+    public function setDefaultImg($defaultImg)
+    {
+        $this->default_img = $defaultImg;
+
+        return $this;
+    }
+
+    /**
+     * Get default_img
+     *
+     * @return string 
+     */
+    public function getDefaultImg()
+    {
+        if ($this->default_img == 'initial') 
+            return "images/noimage.png";
+        return $this->default_img;
     }
 }

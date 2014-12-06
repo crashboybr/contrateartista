@@ -144,7 +144,10 @@ class ArtistController extends Controller
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Artist entity.');
         }
-
+        $entity->setVisit($entity->getVisit() + 1);
+        $em->persist($entity);
+        $em->flush();
+        
         $contact = new Contact();
         $form = $this->createForm(new ContactType(), $contact, array(
             'action' => $this->generateUrl('artist_create_contact'),
@@ -165,10 +168,11 @@ class ArtistController extends Controller
 
         $breadcrumbs->addItem($entity->getName());
 
-
+        $total_imgs = count($entity->getArtistImages());
         return $this->render('ContrateBackendBundle:Artist:show.html.twig', array(
-            'artist'      => $entity,
-            'form'   => $form->createView(),
+            'artist'        => $entity,
+            'form'          => $form->createView(),
+            'total_imgs'    => $total_imgs,
         ));
     }
 

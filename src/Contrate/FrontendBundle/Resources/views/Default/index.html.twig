@@ -74,7 +74,8 @@
                 			Categorias<a class="rss_icon" href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/category-table-layout?format=feed&type=rss"><img src="/assets/rss.png"></a>        
                 		</div>
                 		<div class="cat_row cat_row0">    
-                			{% for cat in categories %}                  
+                			{% for cat in categories %}  
+                        {% if cat.name != "Palestrante" %}                
                 			<div class="cat_col">
                 				<div class="cat_col_in">
                 					<div class="title">
@@ -88,6 +89,7 @@
                 					</div>
                 				</div>
                 			</div>
+                      {% endif %}
                 			{% endfor %}
 
 
@@ -154,22 +156,233 @@
 <div id="jm-bottom2">
   <div id="jm-bottom2-in" class="container">
     <div id="jm-bottom2-space">
-      <div class="bottom2 count_1"><div class="row"><div class="bottom2-in span0"><div class="bottom2-bg">    <div class="jm-module  title-border1-ms">
-        <div class="jm-module-in">
-          <h3 class="jm-title ">Artistas em Destaque</h3>
-          <div class="jm-module-content clearfix">
-            <div class="mod_djclassifieds_items clearfix">
-              <div class="items items-cols3">
-                <div class="items-col icol1"><div class="icol-in">
-                  <div class="item"><div class="title"><a class="title_img" href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/classifieds/furniture/ad/bath-sink,38"><img style="margin-right:3px;" src="http://www.contrateartistas.com/images/artista/472/1a1563db_3c50_4582_a88e_c3188277696a.jpg" alt="Bath Sink" title="38_39_bathroom-sink.1_l"></a><a class="title" href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/classifieds/furniture/ad/bath-sink,38">Alexandre Barillari</a><div class="date_cat"><span class="date">Ator</span><span class="category"><a class="title_cat" href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/classifieds/furniture">Montenegro & Raman</a></span></div></div></div><div class="item"><div class="title"><a class="title_img" href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/classifieds/furniture/ad/leather-sofa,37"><img style="margin-right:3px;" src="http://www.contrateartistas.com/images/artista/478/02fdce22_fbfe_4b9f_a726_ac20f9b16fb1.JPG" alt="Leather Sofa" title="sofa1"></a><a class="title" href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/classifieds/furniture/ad/leather-sofa,37">Anderson Muller</a><div class="date_cat"><span class="date">Ator</span><span class="category"><a class="title_cat" href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/classifieds/furniture">Montenegro & Raman</a></span></div></div></div><div style="clear:both"></div></div></div><div class="items-col icol2"><div class="icol-in"><div class="item"><div class="title"><a class="title_img" href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/classifieds/furniture/ad/dining-table,36"><img style="margin-right:3px;" src="http://www.contrateartistas.com/images/artista/171/4fb322a2_7508_4065_bfed_a5d9489b2b0b.jpg" alt="Dining Table" title="36_37_dining-table_l"></a><a class="title" href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/classifieds/furniture/ad/dining-table,36">Alexandre Moreno</a>
-                  <div class="date_cat"><span class="date">Ator</span><span class="category"><a class="title_cat" href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/classifieds/furniture">Gulierme Abreu</a></span></div></div></div><div class="item promotion p_special"><div class="title"><a class="title_img" href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/classifieds/fashion/ad/jeans-jacket,35"><img style="margin-right:3px;" src="http://www.contrateartistas.com/images/artista/480/14e1bb84_949d_41b4_bd37_6cffcb5c6f67.jpg" alt="Jeans Jacket" title="35_36_22_ad11"></a><a class="title" href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/classifieds/fashion/ad/jeans-jacket,35">André Bankoff</a><div class="date_cat"><span class="date">Ator</span><span class="category"><a class="title_cat" href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/classifieds/fashion">Montenegro & Raman</a></span></div></div></div><div style="clear:both"></div></div></div><div class="items-col icol3"><div class="icol-in"><div class="item"><div class="title"><a class="title_img" href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/classifieds/fashion/ad/trendy-skirt,34"><img style="margin-right:3px;" src="http://www.contrateartistas.com/images/artista/172/e165b1c4_62a3_48b2_b52d_de974160881e.jpg" alt="Trendy Skirt" title="34_35_3_ad6"></a><a class="title" href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/classifieds/fashion/ad/trendy-skirt,34">Alexandre Slavieiro</a><div class="date_cat"><span class="date">Ator</span><span class="category"><a class="title_cat" href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/classifieds/furniture">Montenegro & Raman</a><a class="title_cat" href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/classifieds/fashion"></a></span></div></div></div><div class="item"><div class="title"><a class="title_img" href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/classifieds/fashion/ad/stylish-suit,33"><img style="margin-right:3px;" src="http://www.contrateartistas.com/images/artista/481/df406306_4776_498b_b110_f98292e016b8.jpg" alt="Stylish Suit" title="33_34_26_ad16"></a><a class="title" href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/classifieds/fashion/ad/stylish-suit,33">André Di Mauro</a><div class="date_cat"><span class="date">Ator</span><span class="category"><a class="title_cat" href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/classifieds/fashion">Montenegro & Raman</a></span></div></div></div>       <div style="clear:both"></div>
-                </div></div>
+      <div class="bottom2 count_1">
+        <div class="row">
+          <div class="bottom2-in span0">
+            <div class="bottom2-bg">
+              <div class="jm-module  title-border1-ms">
+                <div class="jm-module-in">
+                  <h3 class="jm-title ">
+                    Artistas em Destaque
+                  </h3>
+                  <div class="jm-module-content clearfix">
+                    <div class="mod_djclassifieds_items clearfix">
+                      <div class="items items-cols3">
+                        <div class="items-col icol1">
+                          <div class="icol-in">
+                            <div class="item">
+                              <div class="title">
+                                <a class="title_img" href="{{ path('artist_show', {'id': 642 }) }}">
+                                  <img style="margin-right:3px;" src="/images/artista/642/be302a4f_c422_4169_bd8a_5adfeca7bb65.jpg">
+                                </a>
+                                <a class="title" href="{{ path('artist_show', {'id': 642 }) }}">
+                                  Kelly key
+                                </a>
+                                <div class="date_cat">
+                                  <span class="date">
+                                    Artista
+                                  </span>
+                                  <span class="category">
+                                    <a class="title_cat">
+                                      Agência MNK
+                                    </a>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="item">
+                              <div class="title">
+                                <a class="title_img" href="{{ path('artist_show', {'id': 211 }) }}">
+                                  <img style="margin-right:3px;" src="/images/artista/211/1a1e9204_d658_4b6b_a248_8e5e2c9b47bd.jpg">
+                                </a>
+                                <a class="title" href="{{ path('artist_show', {'id': 211 }) }}">
+                                  Rafael Cardoso
+                                </a>
+                                <div class="date_cat">
+                                  <span class="date">
+                                    Ator
+                                  </span>
+                                  <span class="category">
+                                    <a class="title_cat" href="{{ path('artist_show', {'id': 211 }) }}">
+                                      Guilherme Abreu
+                                    </a>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="item">
+                              <div class="title">
+                                <a class="title_img" href="{{ path('artist_show', {'id': 99 }) }}">
+                                  <img style="margin-right:3px;" src="/images/artista/99/260bf00c_6210_4a1a_9bb8_e62bd6d268ff.jpg">
+                                </a>
+                                <a class="title" href="{{ path('artist_show', {'id': 99 }) }}">
+                                  Fernanda Lima
+                                </a>
+                                <div class="date_cat">
+                                  <span class="date">
+                                    Atriz
+                                  </span>
+                                  <span class="category">
+                                    <a class="title_cat" href="{{ path('artist_show', {'id': 99 }) }}">
+                                      Agência Artcênicas
+                                    </a>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div style="clear:both">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="items-col icol2">
+                          <div class="icol-in">
+                            <div class="item">
+                              <div class="title">
+                                <a class="title_img" href="{{ path('artist_show', {'id': 1180 }) }}">
+                                  <img style="margin-right:3px;" src="/images/artista/1180/6a2c4db9_b734_4ee1_9609_e8d18139ccf4.jpg">
+                                </a>
+                                <a class="title" href="{{ path('artist_show', {'id': 1180 }) }}">
+                                  Brunninha
+                                </a>
+                                <div class="date_cat">
+                                  <span class="date">
+                                    Show
+                                  </span>
+                                  <span class="category">
+                                    <a class="title_cat" href="{{ path('artist_show', {'id': 1180 }) }}">
+                                      Agência MNK
+                                    </a>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="item promotion p_special">
+                              <div class="title">
+                                <a class="title_img" href="{{ path('artist_show', {'id': 997 }) }}">
+                                  <img style="margin-right:3px;" src="/images/artista/977/d5e3e921_2116_4a1c_b82c_87aae3dc5c46.jpg" alt="Jeans Jacket" title="35_36_22_ad11">
+                                </a>
+                                <a class="title" href="{{ path('artist_show', {'id': 997 }) }}">
+                                  Helen Ganzarolli
+                                </a>
+                                <div class="date_cat">
+                                  <span class="date">
+                                    Celebridades
+                                  </span>
+                                  <span class="category">
+                                    <a class="title_cat" href="{{ path('artist_show', {'id': 997 }) }}">
+                                      Agência MNK
+                                    </a>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="item promotion p_special">
+                              <div class="title">
+                                <a class="title_img" href="{{ path('artist_show', {'id': 2111 }) }}">
+                                  <img style="margin-right:3px;width: 90px;width: x;height: 100px;" src="/images/artista/2111/1ca19a39_48c6_4855_9d70_6fa54588bea6.jpg">
+                                </a>
+                                <a class="title" href="{{ path('artist_show', {'id': 2111 }) }}">
+                                  Buchecha
+                                </a>
+                                <div class="date_cat">
+                                  <span class="date">
+                                    Show
+                                  </span>
+                                  <span class="category">
+                                    <a class="title_cat" href="{{ path('artist_show', {'id': 2111 }) }}">
+                                      Agência A3B
+                                    </a>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div style="clear:both">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="items-col icol3">
+                          <div class="icol-in">
+                            <div class="item">
+                              <div class="title">
+                                <a class="title_img" href="{{ path('artist_show', {'id': 997 }) }}">
+                                  <img style="margin-right:3px;" src="/images/artista/221/e781f308_7f34_437c_88fb_e4f669d29437.jpg">
+                                </a>
+                                <a class="title" href="{{ path('artist_show', {'id': 221 }) }}">
+                                  Thiago Lacerda
+                                </a>
+                                <div class="date_cat">
+                                  <span class="date">
+                                    Ator
+                                  </span>
+                                  <span class="category">
+                                    <a class="title_cat" href="{{ path('artist_show', {'id': 221 }) }}">
+                                      Guilerme Abreu
+                                    </a>
+                                    <a class="title_cat" href="">
+                                    </a>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="item">
+                              <div class="title">
+                                <a class="title_img" href="{{ path('artist_show', {'id': 110 }) }}">
+                                  <img style="margin-right:3px;" src="/images/artista/110/d274af89_3232_4e64_8b04_d4e0167c4079.jpg">
+                                </a>
+                                <a class="title" href="{{ path('artist_show', {'id': 110 }) }}">
+                                  Rodrigo Hilbert
+                                </a>
+                                <div class="date_cat">
+                                  <span class="date">
+                                    Ator
+                                  </span>
+                                  <span class="category">
+                                    <a class="title_cat" href="f{{ path('artist_show', {'id': 110 }) }}">
+                                      Agência Artcênicas
+                                    </a>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="item">
+                              <div class="title">
+                                <a class="title_img" href="{{ path('artist_show', {'id': 1445 }) }}">
+                                  <img style="margin-right:3px;width: 90px;width: x;height: 100px;" src="/images/artista/1445/9b1d2b65_918a_404e_bd80_c70aae874cd7.jpg">
+                                </a>
+                                <a class="title" href="{{ path('artist_show', {'id': 1445 }) }}">
+                                  Mc Koringa
+                                </a>
+                                <div class="date_cat">
+                                  <span class="date">
+                                    Show
+                                  </span>
+                                  <span class="category">
+                                    <a class="title_cat" href="{{ path('artist_show', {'id': 1445 }) }}">
+                                      Matrix Eventos
+                                    </a>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                            
+                            <div style="clear:both">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  
+                </div>
               </div>
-            </div>        
+            </div>
           </div>
         </div>
       </div>
-    </div></div></div></div>        </div>     
+      
+    </div>
+    
   </div>
 </div>
               

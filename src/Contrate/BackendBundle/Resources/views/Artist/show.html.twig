@@ -89,17 +89,24 @@ $(document).ready(function(){
                                         <div class="images_wrap" style="width:500px"><div class="images">
                                             <div class="djc_images">
                                                 <div class="djc_mainimage">
-                                                      <div class="slider">
-                                                        <div id="slider1" style="margin-left: auto; margin-right: auto;">
-                                                              
-                                                                {% for img in artist.artistImages %}
-                                                                    {% if (img.pic != "initial") %}
-                                                                        <img width="" id="djc_mainimage" src="{{ asset(img.pic|imagine_filter('widen')) }}">
-                                                                    {% endif %}
-                                                                {% endfor %}
-                                                          </div>
-                                                        <ul id="thumb" style="margin-top: 25px;"></ul>
-                                                    </div>
+                                                    {% if total_imgs > 0 %}
+                                                        <div class="slider">
+                                                            <div id="slider1" style="margin-left: auto; margin-right: auto;">
+                                                        {% for img in artist.artistImages %}
+                                                            {% if (img.pic != "initial") %}
+                                                                <img width="" id="djc_mainimage" src="{{ asset(img.pic|imagine_filter('widen')) }}">
+                                                            {% endif %}
+                                                        {% endfor %}
+                                                            </div>
+                                                            <ul id="thumb" style="margin-top: 25px;"></ul>
+                                                        </div>
+                                                    {% elseif artist.defaultImg %}
+                                                        <img width="" id="djc_mainimage" src="{{ asset(artist.defaultImg) }}">
+                                                    {% else %}
+                                                        <img width="" id="djc_mainimage" src="{{ asset('images/artista/2670/54c2db3a_5ea7_40f7_bb83_a4fb76f27444.jpg'|imagine_filter('widen')) }}">
+                                                        
+                                                    {% endif %}
+                                                    
                                                 </div>
                                             </div>
                                         </div>
@@ -113,9 +120,9 @@ $(document).ready(function(){
                                             <div class="contact_mainrow">
                                                 <span class="description contato"><h2>Contato</h2></span>
                                                 <span class="row_value"><strong>Categoria:</strong> {{ artist.category.name }} <br></span>
-                                                <span class="row_value"><strong>Agência:</strong> {{ artist.agency }}<br></span>
-                                                <span class="row_value"><b>Site:</b> <a class="btnContact" target="_blank" rel="nofollow" href="{{ artist.website }}">{{ artist.website }}</a><br></span>
-                                                <span class="row_value"><b>Telefone:</b> {{ artist.phone }}<br></span>
+                                                <span class="row_value"><strong>Agência:</strong> {{ artist.user.name }}<br></span>
+                                                <span class="row_value"><b>Site:</b> <a class="btnContact" target="_blank" rel="nofollow" href="http://{{ artist.user.site }}">{{ artist.user.site }}</a><br></span>
+                                                <span class="row_value"><b>Telefone:</b> {{ artist.user.phone }}<br></span>
                                             </div>
 
 

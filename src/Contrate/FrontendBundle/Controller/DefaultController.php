@@ -34,11 +34,12 @@ class DefaultController extends Controller
         $total['Lutador']       = count($em->getRepository("ContrateBackendBundle:Artist")->findBy(array('categoryId' => 43)));
         $total['Celebridade']   = count($em->getRepository("ContrateBackendBundle:Artist")->findBy(array('categoryId' => 29)));
         $total['Teatro']        = count($em->getRepository("ContrateBackendBundle:Artist")->findBy(array('categoryId' => 35)));
-        $total['Palestrante']        = count($em->getRepository("ContrateBackendBundle:Artist")->findBy(array('categoryId' => 46)));
+        
 
         
 
         $categories = $em->getRepository('ContrateBackendBundle:Category')->findAll();
+
         return $this->render('ContrateFrontendBundle:Default:index.html.twig', array(
             'categories' => $categories, 'total' => $total));
     }
