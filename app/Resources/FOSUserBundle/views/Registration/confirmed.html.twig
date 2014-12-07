@@ -5,7 +5,13 @@
 {% block fos_user_content %}
 	<div class="content-ad" style="height: 160px;">
 	<div class="titleMenu">
-        <p class="titleStyle">Conta criada com sucesso!</p>
+        {% for flashMessage in app.session.flashbag.get('success') %}
+        <div class="custom">
+			<p class="alerta-sucess" style="text-align: center;">
+			<img src="/assets/check-sucesso.png" width="28" height="25">{{ flashMessage }}
+			</p>
+		</div>
+		{% endfor %}
         <p style="color: black;">
 			{{ 'registration.confirmed'|trans({'%username%': user.username}) }}
 

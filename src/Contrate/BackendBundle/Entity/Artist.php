@@ -50,10 +50,8 @@ class Artist
 
     /**
      * @var string
-     * @Assert\NotBlank(
-     *      message = "Digite a agência"
-     *)
-     * @ORM\Column(name="agency", type="string", length=255)
+     *
+     * @ORM\Column(name="agency", type="string", length=255, nullable=true)
      */
     private $agency;
 
@@ -564,7 +562,7 @@ class Artist
     public function getDefaultImg()
     {
         if ($this->default_img == 'initial') 
-            return "images/noimage.png";
+            return "images/star.jpg";
         return $this->default_img;
     }
 

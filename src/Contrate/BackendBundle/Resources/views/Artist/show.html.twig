@@ -89,7 +89,10 @@ $(document).ready(function(){
                                         <div class="images_wrap" style="width:500px"><div class="images">
                                             <div class="djc_images">
                                                 <div class="djc_mainimage">
-                                                    {% if total_imgs > 0 %}
+                                                    {% if (artist.defaultImg == "images/star.jpg") %}
+                                                        <img src="{{ asset('images/star.jpg') }}" width="625" height="345" />
+                                                    {% else %}
+                                                        {% if total_imgs > 0 %}
                                                         <div class="slider">
                                                             <div id="slider1" style="margin-left: auto; margin-right: auto;">
                                                         {% for img in artist.artistImages %}
@@ -101,11 +104,15 @@ $(document).ready(function(){
                                                             <ul id="thumb" style="margin-top: 25px;"></ul>
                                                         </div>
                                                     {% elseif artist.defaultImg %}
+
                                                         <img width="" id="djc_mainimage" src="{{ asset(artist.defaultImg) }}">
                                                     {% else %}
+
                                                         <img width="" id="djc_mainimage" src="{{ asset('images/artista/2670/54c2db3a_5ea7_40f7_bb83_a4fb76f27444.jpg'|imagine_filter('widen')) }}">
                                                         
+                                                        {% endif %}
                                                     {% endif %}
+                                                    
                                                     
                                                 </div>
                                             </div>

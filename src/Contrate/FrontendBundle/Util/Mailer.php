@@ -19,7 +19,12 @@ class Mailer
         //die('a');
 
         // Load the template in
-        $user = $entity->getArtist()->getUser();
+        if ($type == 'newartist') {
+            $to_email = 'bernardoniteroi@gmail.com';
+        } else {
+            $user = $entity->getArtist()->getUser();
+            $to_email = $user->getEmail();
+        }
 
         $templateFile = "ContrateFrontendBundle:Email:email-" . $type . ".html.twig";
         //$templateFile = "iListFrontendBundle:Email:email-published.html.twig";
@@ -37,7 +42,7 @@ class Mailer
         $message = \Swift_Message::newInstance()
             ->setSubject($subject)
             ->setFrom("contato@contrateartista.com.br")
-            ->setTo($user->getEmail())
+            ->setTo($to_email)
             //->setCco('bernardoniteroi@gmail.com')
             ->setBcc('bernardo.d.alves@gmail.com')
             ->setBody($body, 'text/html');

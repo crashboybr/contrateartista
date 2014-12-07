@@ -2,39 +2,54 @@
 
 {% if pageCount > 1 %}
 <div class="pagination">
+    <ul>
     {% if first is defined and current != first %}
-        <span class="first">
-            <a href="{{ path(route, query|merge({(pageParameterName): first})) }}" class="btn-listing">&lt;&lt;</a>
-        </span>
+        <li class="pagination-start">
+            <a class="pagenav" href="{{ path(route, query|merge({(pageParameterName): first})) }}">Início</a>
+        </li>
+    {% else %}
+        <li class="pagination-start"><span class="pagenav">Início</span></li>
     {% endif %}
 
     {% if previous is defined %}
-        <span class="previous">
-            <a href="{{ path(route, query|merge({(pageParameterName): previous})) }}" class="btn-listing">&lt;</a>
-        </span>
+        
+        <li class="pagination-end">
+            <a href="{{ path(route, query|merge({(pageParameterName): previous})) }}" class="hasTooltip pagenav" data-original-title="End"><<</a>
+        </li>
+    {% else %}
+        <li class="pagination-prev"><span class="pagenav"><<</span></li>
     {% endif %}
 
     {% for page in pagesInRange %}
         {% if page != current %}
-            <span class="page">
-                <a href="{{ path(route, query|merge({(pageParameterName): page})) }}" class="btn-listing">{{ page }}</a>
-            </span>
+            <li>
+                <a href="{{ path(route, query|merge({(pageParameterName): page})) }}" class="pagenav">{{ page }}</a>
+            </li>
+            
         {% else %}
-            <span class="current">{{ page }}</span>
+            <li>
+                <span class="pagenav">{{ page }}</span>
+            </li>
+            
         {% endif %}
 
     {% endfor %}
 
     {% if next is defined %}
-        <span class="next">
-            <a href="{{ path(route, query|merge({(pageParameterName): next})) }}" class="btn-listing">&gt;</a>
-        </span>
+        <li class="pagination-next">
+            <a href="{{ path(route, query|merge({(pageParameterName): next})) }}" class="hasTooltip pagenav" data-original-title="Next">&gt;&gt;</a>
+        </li>
+    {% else %}
+        <li class="pagination-start"><span class="pagenav">&gt;&gt;</span></li>
     {% endif %}
 
     {% if last is defined and current != last %}
-        <span class="last">
-            <a href="{{ path(route, query|merge({(pageParameterName): last})) }}" class="btn-listing">&gt;&gt;</a>
-        </span>
+        <li class="pagination-end">
+            <a href="{{ path(route, query|merge({(pageParameterName): last})) }}" class="hasTooltip pagenav" data-original-title="End">Final</a>
+        </li>
+    {% else %}
+        <li class="pagination-start"><span class="pagenav">Final</span></li>
     {% endif %}
+    </ul>
 </div>
 {% endif %}

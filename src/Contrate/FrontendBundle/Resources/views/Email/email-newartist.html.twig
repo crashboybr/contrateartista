@@ -1,0 +1,17 @@
+{% block body %}
+Novo Arista<br />
+
+Nome: {{ entity.name }}<br />
+
+<a href="{{ url('artist_show', { 'id': entity.id }) }}">{{ url('artist_show', { 'id': entity.id }) }}</a>
+
+
+
+
+
+{% endblock %}
+
+{% block subject -%}
+Novo Artista Inserido
+{% endblock %}
+

@@ -74,7 +74,7 @@ class ArtistController extends Controller
                 $em->persist($entity);
                 $em->flush();
             }
-
+            $this->get('send_mail')->sendEmail($entity, 'newartist');
             $this->get('session')->getFlashBag()->add(
                         'success',
                         'Artista cadastrado com sucesso! Estamos revisando as informações, aguarde a confirmação por email! Obrigado!');

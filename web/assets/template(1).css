@@ -3441,7 +3441,7 @@ div.pagination li {
   vertical-align: top;
   line-height: 36px;
   padding: 0;
-  margin: 0 20px 0 0;
+  margin: 0 19px 0 0;
   background-image: none !important;
 }
 div.pagination ul li span,
@@ -3472,8 +3472,12 @@ div.pagination ul li a {
   -moz-box-shadow: 0 2px 1px -1px #ECECEC;
   box-shadow: 0 2px 1px -1px #ECECEC;
 }
+/*  -----------  trocar esse trecho ---------------------- */
+
 div.pagination ul li span.pagenav {
-  color: #fff;
+  color: #FFF; !important;
+  background-color:#189e8f;
+  
 }
 div.pagination ul li.pagination-start span.pagenav,
 div.pagination ul li.pagination-prev span.pagenav,
@@ -3484,6 +3488,7 @@ div.pagination ul li.pagination-end span.pagenav,
 div.pagination ul li.pagination-next a.pagenav,
 div.pagination ul li.pagination-end a.pagenav {
   background: #fff;
+  
 }
 div.pagination ul li.pagination-start span.pagenav,
 div.pagination ul li.pagination-prev span.pagenav,
@@ -3492,8 +3497,23 @@ div.pagination ul li.pagination-end span.pagenav {
   color: #888888;
 }
 div.pagination ul li a:hover {
-  color: #fff !important;
+  color: #FFF; !important;
+  background-color:#888888;
 }
+
+div.pagination ul li.pagination-next a:hover.pagenav{
+  color: #FFF; !important;
+  background-color:#888888;
+}
+
+
+div.pagination ul li.pagination-end a:hover.pagenav {
+  color: #FFF; !important;
+  background-color:#888888;
+}
+
+/*  -----------  trocar esse trecho ---------------------- */
+
 p.counter {
   float: none !important;
   margin: 0 0 10px;
