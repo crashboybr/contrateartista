@@ -1408,9 +1408,9 @@ a:active {
   text-align: right;
 }
 #jm-header {
-  background-color: #333;
-  padding-top: 30px;
-  padding-bottom: 60px;
+background-color: #333;
+padding-top: 104px;
+padding-bottom: 60px;
 }
 .middlebar #jm-header {
   padding-bottom: 0;
@@ -1461,9 +1461,9 @@ a:active {
   margin: 0 0 15px;
 }
 #jm-header + #jm-main {
-  margin-top: -60px;
-  padding-top: 45px;
-  background: #f6f6f6;
+/*margin-top: -1px;*/
+padding-top: 45px;
+background: #f6f6f6;
 }
 #jm-header + #jm-main.container {
   padding-left: 45px;
@@ -2121,7 +2121,7 @@ a:active {
   transition: all 0.5s ease-in-out;
 }
 .jm-custom-title {
-  font-size: 72px;
+  font-size: 42px;
   font-weight: 800;
   font-style: italic;
   text-align: center;

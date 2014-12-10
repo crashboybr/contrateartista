@@ -1296,7 +1296,12 @@
 }
 
 #dj-classifieds .dj-item .djc_mainimage {
-	*margin-right: 20px;/*ie7*/	
+    /*margin-right: 20px;/*ie7*/ 
+    /*width:445px;
+    height: 345px;
+    border: 8px solid #e1e1e1;
+    border-radius: 5px;
+    position: relative;*/
 }
 
 #dj-classifieds .dj-item .djc_thumbnails {
@@ -1354,7 +1359,7 @@
 
 #dj-classifieds .dj-item .general_det .djcf_contact .contact_mainrow,
 #dj-classifieds .dj-item .general_det .djcf_contact .contact_row {
-    margin: 0 0 30px;
+    margin: 0 0 50px;
 }
 
 #dj-classifieds .dj-item .general_det .djcf_contact .contact_row .row_label {
@@ -2561,7 +2566,7 @@ label.required:after {
 .slider{
  margin: 0 auto;
  width: 625x;
- height: 345px;
+ height: 357px;
  border: 8px solid #e1e1e1;
  border-radius:5px;
  position: relative;

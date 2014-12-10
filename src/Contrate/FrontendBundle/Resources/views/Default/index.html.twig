@@ -82,7 +82,7 @@
                 						<a href="{{ path('contrate_frontend_search', {'category': cat.id }) }}"><img src="{{ asset(cat.pic) }}" alt="{{ cat.name }}"></a>
                 						<div class="cat_title_desc">
                 							<h2>
-                								<a href="#">{{ cat.name }} <span>({{ total[cat.name] }})</span></a>
+                								<a href="{{ path('contrate_frontend_search', {'category': cat.id }) }}">{{ cat.name }} <span>({{ total[cat.name] }})</span></a>
                 							</h2>
                 							<span class="cat_desc"></span>
                 						</div>
