@@ -4,6 +4,7 @@ namespace Contrate\FrontendBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Contrate\BackendBundle\Form\FilterType;
+use Contrate\BackendBundle\Entity\Category;
 
 class DefaultController extends Controller
 {
@@ -44,12 +45,12 @@ class DefaultController extends Controller
             'categories' => $categories, 'total' => $total));
     }
 
-    public function searchAction($category)
+    public function searchAction(Category $category)
     {
         $breadcrumbs = $this->get("white_october_breadcrumbs");
         // Simple example
         $breadcrumbs->addItem("Home", $this->get("router")->generate("contrate_frontend_homepage"));
-        $breadcrumbs->addItem("Artistas", $this->get("router")->generate("contrate_frontend_search"));
+        $breadcrumbs->addItem($category->getName());
 
         $em = $this->getDoctrine()->getManager();
         

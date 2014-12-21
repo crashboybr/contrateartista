@@ -102,7 +102,7 @@ class User extends BaseUser
      * @ORM\Column(type="string", length=255,nullable=true)
      *    
      * @Assert\Regex(
-     *     pattern="/^\(\d{2}\)\s{0,1}\d{4,5}-\d{4}$/",
+     *     pattern="/^\([0-9]{2}\)[\s][0-9]{4}-[0-9]{4,5}$/",
      *     match=true,
      *     message="Telefone Inválido. Formato: (99) 9999-9999"
      * )

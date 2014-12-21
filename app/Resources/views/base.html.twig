@@ -23,7 +23,7 @@
     <!-- load core head -->
       <!--<base href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/">--><base href=".">
   
-  <title>Home</title>
+  <title>{% block title %}Contrate Artista pelo Brasil{% endblock %}</title>
   <link href="saved_resource.html" rel="canonical">
 
   <link rel="stylesheet" href="/assets/modal(1).css" type="text/css">
@@ -105,7 +105,7 @@
               <li class="item-527">
             <a href="{{ path('fos_user_security_login') }}">Login</a></li><li class="item-528">
             <a href="{{ path('fos_user_registration_register') }}">Cadastre-se</a></li><li class="item-530">
-            <a class="color" href="{{ path('artist_new') }}">Inserir um artista gratis</a></li></ul>
+            <a class="color" href="{{ path('artist_new') }}">Inserir um artista grátis</a></li></ul>
             {% endif %}
               
              </div>
@@ -140,9 +140,8 @@
             <div class="customtitle-small-ms">
               <p style="clear: both;">(21) 3185-8766</p>
               <p style="line-height: 1.5em;">comercial@contrateartistas.com</p>
-              <a onclick="" href="#">
         <img src="/assets/mnk.jpg" alt="Agência MNK" style="height: 93px;width: 213px;">
-        </a>
+        
               </div>
 
             </div>
@@ -157,7 +156,9 @@
         <h3 class="jm-title ">Mais informações</h3>
         <div class="jm-module-content clearfix">
           <ul class="nav menu">
-            <li class="item-544"><a href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/about-us">Quem somos</a></li><li class="item-545"><a href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/delivery-information">FAQ</a></li><li class="item-546"><a href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/privacy-policy">Política de privcidade</a></li></ul>
+            <li class="item-544"><a href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/about-us">Quem somos</a></li>
+            <!--<li class="item-545"><a href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/delivery-information">FAQ</a></li><li class="item-546"><a href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/privacy-policy">Política de privcidade</a></li>!-->
+            </ul>
 
           </div>
         </div>

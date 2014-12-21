@@ -4,8 +4,8 @@
 <div class="pagination">
     <ul>
     {% if first is defined and current != first %}
-        <li class="pagination-start">
-            <a class="pagenav" href="{{ path(route, query|merge({(pageParameterName): first})) }}">Início</a>
+        <li class="pagination-end">
+            <a href="{{ path(route, query|merge({(pageParameterName): first})) }}" class="hasTooltip pagenav" data-original-title="End">Início</a>
         </li>
     {% else %}
         <li class="pagination-start"><span class="pagenav">Início</span></li>

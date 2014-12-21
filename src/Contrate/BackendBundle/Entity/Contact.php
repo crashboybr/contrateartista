@@ -59,7 +59,7 @@ class Contact
      *      message = "Digite seu telefone"
      *)
      * @Assert\Regex(
-     *     pattern="/^\(\d{2}\)\s{0,1}\d{4,5}-\d{4}$/",
+     *     pattern="/^\([0-9]{2}\)[\s][0-9]{4}-[0-9]{4,5}$/",
      *     match=true,
      *     message="Telefone Inválido. Formato: (99) 9999-9999"
      * )
@@ -79,7 +79,7 @@ class Contact
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="event_at", type="datetime")
+     * @ORM\Column(name="event_at", type="string", length=255)
      * @Assert\NotBlank(
      *      message = "Preencha a data do evento"
      *)

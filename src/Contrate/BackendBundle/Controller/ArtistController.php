@@ -185,6 +185,7 @@ class ArtistController extends Controller
     {
         $entity = new Contact();
         $em = $this->getDoctrine()->getManager();
+
         
         $artist_id  = $request->get('contrate_backendbundle_contact')['artistId'];
         
@@ -201,7 +202,11 @@ class ArtistController extends Controller
         $form->handleRequest($request);
 
         if ($form->isValid()) {
-            
+            //$eventAt = $_POST['contrate_backendbundle_contact']['eventAt'];
+
+            //$format_event_at = new \DateTime($eventAt);
+            //$format_event_at = $format_event_at->format('Y-m-d');
+            //$entity->setEventAt($format_event_at);
             $em = $this->getDoctrine()->getManager();
             $entity->setStatus(-1);
             $em->persist($entity);

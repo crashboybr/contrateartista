@@ -1408,10 +1408,15 @@ a:active {
   text-align: right;
 }
 #jm-header {
-background-color: #333;
-padding-top: 104px;
-padding-bottom: 60px;
+background-image: url(../Home_files/bg.jpg);
 }
+
+#jm-header {
+background-color: #333;
+padding-top: 30px;
+padding-bottom: 135px;
+}
+
 .middlebar #jm-header {
   padding-bottom: 0;
 }
@@ -1460,11 +1465,13 @@ padding-bottom: 60px;
   text-align: right;
   margin: 0 0 15px;
 }
+
 #jm-header + #jm-main {
-/*margin-top: -1px;*/
+margin-top: 1px;
 padding-top: 45px;
 background: #f6f6f6;
 }
+
 #jm-header + #jm-main.container {
   padding-left: 45px;
   padding-right: 45px;
@@ -2121,17 +2128,17 @@ background: #f6f6f6;
   transition: all 0.5s ease-in-out;
 }
 .jm-custom-title {
-  font-size: 42px;
-  font-weight: 800;
-  font-style: italic;
-  text-align: center;
-  line-height: 1.5em;
+font-size: 42px;
+font-weight: 800;
+font-style: italic;
+text-align: center;
+line-height: 1.5em;
 }
 .jm-custom-subtitle {
-  font-size: 19px;
-  font-weight: 700;
-  text-align: center;
-  line-height: 1.7em;
+font-size: 19px;
+font-weight: 700;
+text-align: center;
+line-height: 1.7em;
 }
 .jm-special .td1 {
   float: left;

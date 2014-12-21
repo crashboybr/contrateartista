@@ -36,12 +36,7 @@ class ContactType extends AbstractType
                     'expanded' => false,
                     'choices' => $events
                 ))
-            ->add('eventAt', 'date', array(
-                'widget' => 'single_text',
-                // this is actually the default format for single_text
-                'format' => 'yyyy-MM-dd',
-                'attr' => array('min' => '2014-01-01', 'value' => '2014-01-01'),
-                'view_timezone' => 'America/Sao_Paulo'))
+            ->add('eventAt', 'text')
             ->add('city')
             ->add('state')
             ->add('description')

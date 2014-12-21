@@ -3,6 +3,6 @@
 <form action="{{ path('fos_user_profile_edit') }}" {{ form_enctype(form) }} method="POST" class="fos_user_profile_edit">
     {{ form_widget(form) }}
     <div>
-        <input type="submit" value="{{ 'profile.edit.submit'|trans }}" />
+        <input class="btn btn-primary" type="submit" value="{{ 'profile.edit.submit'|trans }}" style="margin: 20px 0 20px 0;">
     </div>
 </form>

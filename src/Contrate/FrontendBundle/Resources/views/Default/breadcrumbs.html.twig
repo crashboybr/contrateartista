@@ -5,24 +5,18 @@
       {% for b in breadcrumbs %}
 
       <li>
-        <a href="{{ b.url }}" class="pathway">
-          {{- b.text | trans(b.translationParameters, translation_domain, locale) -}}</a>{% if separator is not null and not loop.last %}<span class="divider"><img src="/assets/arrow.png" alt="">{% endif %}</span></li>
-        
-
-
-        {#<li{% if itemClass is defined and itemClass|length %} class="{{ itemClass }}"{% endif %}{% if not(loop.first) %} itemprop="child"{% endif %}>
-          {% if b.url and not loop.last %}<a href="{{ b.url }}" itemprop="url"{% if linkRel is defined and linkRel|length %} rel="{{ linkRel }}"{% endif %}>{% endif %}
-          <span itemprop="title">{{- b.text | trans(b.translationParameters, translation_domain, locale) -}}</span>
-          {% if b.url and not loop.last %}</a>{% endif %}
-
-          {% if separator is not null and not loop.last %}
-            <span class='{{ separatorClass }}'>{{ separator }}</span>
+        {% if b.url and not loop.last %}<a href="{{ b.url }}" class="pathway">{% endif %}
+          {{- b.text | trans(b.translationParameters, translation_domain, locale) -}}
+        {% if b.url and not loop.last %}</a>{% endif %}
+        {% if separator is not null and not loop.last %}
+        <span class="divider"><img src="/assets/arrow.png" alt=""></span>
         {% endif %}
-        </li>
-          #}
+      </li>
+
+
+        
       
       {% endfor %}
     </ul>
   {% endspaceless %}
 {% endif %}
-
