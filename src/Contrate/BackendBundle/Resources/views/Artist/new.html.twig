@@ -100,7 +100,7 @@
 											<label id="password-lbl" for="password" class=" required">Site</label>						
 										</div>
 										<div class="controls">
-											{{ form_widget(form.website, { attr: { 'size': '50' }}) }}
+											{{ form_widget(form.website, { attr: { 'size': '50', 'value': me.site }}) }}
 											{% if (form.website.vars.errors|length > 0) %}
 											<p style="color: #993300; background-color: #f7e5e5; border: 1px solid #dc9f9c; width: 340px; text-align: center;">{{ form.website.vars.errors[0].message }}</p>
 											{% endif %}
@@ -135,9 +135,15 @@
 											<label id="password-lbl" for="password2" class=" required">Foto</label>
 										</div>
 										<div class="controls">
-											
+											<h3>Escolha uma imagem de perfil</h3>
+                                             
 											{% for artistImage in form.artist_images %}
-													<img src="/assets/photo.gif" width="44" height="34">
+												{% if loop.index == 2 %}
+													<br />
+													<h3>Insira algumas imagens para a galeria</h3>				
+													<p>Para melhor visualização, escolha imagens acima de (450px450)</p>
+												{% endif %}
+													<div style="float: left;"><img src="/images/icon-profile-ai.jpg" width="47" height="47"></div>
 											        {{ form_errors(artistImage) }}
 											        {{ form_widget(artistImage, { 'attr': { 'size': 50 }}) }}
 											{% endfor %}

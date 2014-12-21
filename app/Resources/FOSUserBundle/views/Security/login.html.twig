@@ -3,17 +3,6 @@
 
 {% extends '::base.html.twig' %}
 
-{% block featuredcontent %}
-<div class="substrate">
-				<img src="http://projetofinal.dev/wp-content/themes/academy/images/bgs/site_bg.jpg" class="fullwidth" alt="" />			</div>
-						<div class="row">
-							<div class="page-title">
-					<h1 class="nomargin">Login</h1>
-				</div>
-				<!-- /page title -->				
-						</div>
-
-{% endblock %}
 
 {% block body %}
 <div id="jm-main-space">
@@ -22,7 +11,7 @@
 
 			<ul class="breadcrumb">
 				<li class="active">Você está em: &nbsp;</li>
-				<li><a href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/" class="pathway">Home</a><span class="divider"><img src="/assets/arrow.png" alt=""></span></li>
+				<li><a href="" class="pathway">Home</a><span class="divider"><img src="/assets/arrow.png" alt=""></span></li>
 				<li class="active"><span>Login</span></li>
 			</ul>
 
@@ -63,6 +52,7 @@
 						<div id="jm-maincontent">
 							<div id="system-message-container"></div>
 							<div class="login ">
+								<h3 class="jm-title ">Para se logar preencha os campos abaixo:</h3>
 								<form action="{{ path("fos_user_security_check") }}" method="post">
 									<fieldset class="well">
 										<input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />						 
@@ -91,9 +81,15 @@
 										<input type="hidden" id="remember_me" name="_remember_me" value="on" />
 
 										<button type="submit" class="btn btn-primary" id="_submit" name="_submit">Login</button>
-									</div>
-								</form>
+										<div style="margin:50px 0 0 0">
+                            				<h3 class="jm-title ">Caso não tenha uma conta, clique no botão abaixo:</h3>
+                            				<a href="{{ path('fos_user_registration_register') }}"><button type="button" class="btn btn-primary" id="_submit" name="_submit">Criar conta</button></a>
+                            			</div>
 								
+									</div>
+								
+								</form>
+
 							</div>
 
 						</div>

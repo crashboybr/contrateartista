@@ -127,6 +127,8 @@ $(document).ready(function(){
                                 </div>        
                                 <div class="dj-item-in">
                                     <div class="djcf_images_generaldet_box">    
+
+                                        
                                         <div class="images_wrap" style="width:500px"><div class="images">
                                             <div class="djc_images">
                                                 <div class="djc_mainimage">
@@ -137,28 +139,28 @@ $(document).ready(function(){
                                                         <div class="slider">
                                                             <div id="slider1" style="margin-left: auto; margin-right: auto;">
                                                         {% for img in artist.artistImages %}
-                                                            {% if (img.pic != "initial") %}
+                                                            {% if (img.pic != "initial" and img.pic != artist.defaultImg) %}
                                                                 <img width="" id="djc_mainimage" src="{{ asset(img.pic|imagine_filter('widen')) }}">
                                                             {% endif %}
                                                         {% endfor %}
                                                             </div>
                                                             <ul id="thumb" style="margin-top: 25px;"></ul>
                                                         </div>
-                                                    {% elseif artist.defaultImg %}
-
-                                                        <img width="" id="djc_mainimage" src="{{ asset(artist.defaultImg) }}">
+                                             
                                                     {% else %}
 
                                                         <img width="" id="djc_mainimage" src="{{ asset('images/artista/2670/54c2db3a_5ea7_40f7_bb83_a4fb76f27444.jpg'|imagine_filter('widen')) }}">
                                                         
                                                         {% endif %}
                                                     {% endif %}
-                                                    
+                                                
                                                     
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>            
+                                    </div>
+                                    
+                                    
 
                                     <div class="general_det no_images" style="width:400px;float:left;margin:0 0 0 30px;">       
                                         <div class="row_gd">
@@ -186,7 +188,7 @@ $(document).ready(function(){
                                         </div>
                                         <div class="row_gd added">
                                             <span class="description descricao"><h2>Descrição</h2></span>
-                                            <span class="row_value">{{ artist.description }}</span>
+                                            <span class="row_value">{{ artist.description|raw }}</span>
                                         </div>
 
                                     </div>

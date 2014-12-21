@@ -13,3 +13,15 @@ contrate_frontend_search:
 ContrateBackendBundle_contact:
         resource: "@ContrateBackendBundle/Resources/config/routing/contact.yml"
         prefix:   /contato
+
+contrate_frontend_quem:
+    path:     /quem-somos
+    defaults: { _controller: ContrateFrontendBundle:Default:quem }
+
+contrate_frontend_duvidas:
+    path:     /duvidas
+    defaults: { _controller: ContrateFrontendBundle:Default:duvidas }
+
+contrate_frontend_como:
+    path:     /como-funciona
+    defaults: { _controller: ContrateFrontendBundle:Default:como }

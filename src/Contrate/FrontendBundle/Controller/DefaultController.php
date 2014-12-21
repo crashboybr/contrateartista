@@ -47,6 +47,7 @@ class DefaultController extends Controller
 
     public function searchAction(Category $category = null)
     {
+
         $breadcrumbs = $this->get("white_october_breadcrumbs");
         // Simple example
         $breadcrumbs->addItem("Home", $this->get("router")->generate("contrate_frontend_homepage"));
@@ -58,9 +59,13 @@ class DefaultController extends Controller
 
         $qb = $em->createQueryBuilder();
 
+        $page = $this->get('request')->query->get('page', 1);
+
         if ($this->getRequest()->getMethod() == 'POST') 
         {
             $filterForm->handleRequest($this->getRequest());
+
+            $page = $_POST['page'];
 
             $data = $filterForm->getData();
             $filters = array();
@@ -112,16 +117,43 @@ class DefaultController extends Controller
             }
         }
 
+
         $paginator  = $this->get('knp_paginator');
-            $artists = $paginator->paginate(
+        $artists = $paginator->paginate(
                 $qb->getQuery(),
-                $this->get('request')->query->get('page', 1)/*page number*/,
+                $page/*page number*/,
                 10/*limit per page*/
             );
 
         
 
         return $this->render('ContrateFrontendBundle:Default:search.html.twig', 
-            array('artists' => $artists, 'filterForm' => $filterForm->createView()));
+            array('artists' => $artists, 'filterForm' => $filterForm->createView(), 'page' => $page));
     }
+
+    public function quemAction()
+    {
+        $breadcrumbs = $this->get("white_october_breadcrumbs");
+        $breadcrumbs->addItem("Home", $this->get("router")->generate("contrate_frontend_homepage"));
+        $breadcrumbs->addItem("Quem somos");
+
+        return $this->render('ContrateFrontendBundle:Default:quem-somos.html.twig');
+    }
+
+    public function duvidasAction()
+    {
+        $breadcrumbs = $this->get("white_october_breadcrumbs");
+        $breadcrumbs->addItem("Home", $this->get("router")->generate("contrate_frontend_homepage"));
+        $breadcrumbs->addItem("Dúvidas frequentes");
+        return $this->render('ContrateFrontendBundle:Default:duvidas.html.twig');
+    }
+
+    public function comoAction()
+    {
+        $breadcrumbs = $this->get("white_october_breadcrumbs");
+        $breadcrumbs->addItem("Home", $this->get("router")->generate("contrate_frontend_homepage"));
+        $breadcrumbs->addItem("Como funciona");
+        return $this->render('ContrateFrontendBundle:Default:como-funciona.html.twig');
+    } 
+
 }

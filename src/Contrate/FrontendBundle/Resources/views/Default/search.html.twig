@@ -118,7 +118,7 @@
                     {% endfor %}
 
                     <br />
-
+                    <input type="hidden" name="page" value={{ page }} />
                     {{ form_widget(filterForm.submit, { attr: { 'class': 'button btn' }}) }}
                     {{ form_end(filterForm) }}
                     <div style="clear:both"></div>
