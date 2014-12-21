@@ -45,12 +45,12 @@ class DefaultController extends Controller
             'categories' => $categories, 'total' => $total));
     }
 
-    public function searchAction(Category $category)
+    public function searchAction(Category $category = null)
     {
         $breadcrumbs = $this->get("white_october_breadcrumbs");
         // Simple example
         $breadcrumbs->addItem("Home", $this->get("router")->generate("contrate_frontend_homepage"));
-        $breadcrumbs->addItem($category->getName());
+        if ($category) $breadcrumbs->addItem($category->getName());
 
         $em = $this->getDoctrine()->getManager();
         
