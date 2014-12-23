@@ -22,8 +22,8 @@
             <div class="jm-module-content clearfix">
               <div id="mod_djcf_search211" class="dj_cf_search">
                 <form action="{{ path('contrate_frontend_search') }}" method="post" name="" id="form-search">
-                  <input type="text" size="12" name="q" class="inputbox first_input" placeholder="Procurar um artista..." onfocus="if(this.value==&#39;What are you looking for...?&#39;) this.value=&#39;&#39;;" onblur="if (this.value==&#39;&#39;) this.value=&#39;What are you looking for...?&#39;;">
-
+                  <input type="text" size="12" name="q" class="inputbox first_input" placeholder="Procurar um artista..." >
+                  <input type="hidden" name="page" value=1>
                   <button type="submit" class="button btn">Buscar</button>
 
 
