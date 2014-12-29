@@ -174,10 +174,21 @@ class ArtistController extends Controller
         $breadcrumbs->addItem($entity->getName());
 
         $total_imgs = count($entity->getArtistImages());
+
+        $count_initial = 0;
+        //var_dump($total_imgs);
+        foreach ($entity->getArtistImages() as $img) {
+            if ($img->getPic() == "initial")
+                $count_initial++; 
+            //var_dump($img->getPic());
+        }
+        //var_dump($total_imgs);exit;
+        
         return $this->render('ContrateBackendBundle:Artist:show.html.twig', array(
             'artist'        => $entity,
             'form'          => $form->createView(),
             'total_imgs'    => $total_imgs,
+            'count_initial'      => $count_initial
         ));
     }
 
