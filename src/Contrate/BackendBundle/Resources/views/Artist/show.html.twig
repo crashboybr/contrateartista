@@ -128,7 +128,7 @@ $(document).ready(function(){
                                 <div class="dj-item-in">
                                     <div class="djcf_images_generaldet_box">    
 
-                                        
+                                        {% if total_imgs > 0 %}
                                         <div class="images_wrap" style="width:500px"><div class="images">
                                             <div class="djc_images">
                                                 <div class="djc_mainimage">
@@ -144,8 +144,8 @@ $(document).ready(function(){
                                                             {% endif %}
                                                         {% endfor %}
                                                             </div>
-                                                            <ul id="thumb" style="margin-top: 25px;"></ul>
                                                         </div>
+                                                        <ul id="thumb" style="margin-top: 25px;"></ul>
                                              
                                                     {% else %}
 
@@ -159,10 +159,11 @@ $(document).ready(function(){
                                             </div>
                                         </div>
                                     </div>
+                                    {% endif %}
                                     
                                     
 
-                                    <div class="general_det no_images" style="width:400px;float:left;margin:0 0 0 30px;">       
+                                    <div class="general_det no_images" style="width:400px;float:left;">
                                         <div class="row_gd">
 
                                         </div>

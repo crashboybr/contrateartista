@@ -1313,7 +1313,7 @@
 }
 
 #dj-classifieds .dj-item .images_wrap {
-    float: left;
+    float: right;
     max-width: 100%;
 }
 
@@ -1359,7 +1359,7 @@
 
 #dj-classifieds .dj-item .general_det .djcf_contact .contact_mainrow,
 #dj-classifieds .dj-item .general_det .djcf_contact .contact_row {
-    margin: 0 0 50px;
+    margin: 0 0 65px;
 }
 
 #dj-classifieds .dj-item .general_det .djcf_contact .contact_row .row_label {
@@ -2605,11 +2605,11 @@ label.required:after {
     padding:0;  
 }
 
-#thumb li { 
-    width: 60px; 
-    float: left; 
-    margin: 8px; 
-    list-style: none 
+#thumb li {
+    width: 60px;
+    float: left;
+    margin: 8px 10px 0 0;
+    list-style: none;
 }
 
 #thumb a { 
@@ -2634,4 +2634,10 @@ label.required:after {
 #thumb img { 
     border: none; 
     display: block 
+}
+
+.bt_link_adview{
+    color:#189e8f;
+    text-decoration:none;
+    font-weight:bold;
 }
