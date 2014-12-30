@@ -70,8 +70,9 @@ class DefaultController extends Controller
             $data = $filterForm->getData();
             $filters = array();
             
-            $q = $data['q'];
+            $q = $data['q'] ? $data['q'] : $_POST['q'];
             //$cat   = $data['category'];
+            //var_dump($_POST);exit;
 
             $qb->select('f')
                 ->from('ContrateBackendBundle:Artist', 'f')
