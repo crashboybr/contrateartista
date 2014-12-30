@@ -242,14 +242,24 @@ class ArtistController extends Controller
 
         //$breadcrumbs->addItem($artist->getName());
 
-        //$total_imgs = count($artist->getArtistImages());
-        return $this->showAction($artist_id);
-        /*return $this->render('ContrateBackendBundle:Artist:show.html.twig', array(
+        $total_imgs = count($artist->getArtistImages());
+
+        $count_initial = 0;
+        //var_dump($total_imgs);
+        foreach ($artist->getArtistImages() as $img) {
+            if ($img->getPic() == "initial")
+                $count_initial++; 
+            //var_dump($img->getPic());
+        }
+
+        //return $this->showAction($artist_id);
+        return $this->render('ContrateBackendBundle:Artist:show.html.twig', array(
             'entity' => $entity,
             'artist' => $artist,
             'form'   => $form->createView(),
-            'total_imgs' => $total_imgs
-        ));*/
+            'total_imgs' => $total_imgs,
+            'count_initial' => $count_initial
+        ));
     }
 
     /**
