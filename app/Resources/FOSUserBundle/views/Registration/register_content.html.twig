@@ -42,13 +42,24 @@ $(document).ready(function() {
 
 function changeType() {
 	type_val = $("#fos_user_registration_form_type").val();
-	console.log(type_val);
+
+//	console.log(type_val);
 	if (type_val == 'Contratante')
 		$("#subtype").show();
-	else
+	else 
 		$("#subtype").hide();
+	$("#agencia").show();
 }
 
+function changeSubType() {
+	
+	subtype_val = $("#fos_user_registration_form_subtype").val();
+//	console.log(type_val);
+	if (subtype_val == 'Agência')
+		$("#agencia").show();
+	else
+		$("#agencia").hide();
+}
 
 </script>
 <div class="row">
@@ -101,7 +112,7 @@ function changeType() {
 							<label id="username-lbl" for="username" class="">Tipo<span class="star"></span></label>						
 						</div>
 						<div class="controls">
-							{{ form_widget(form.subtype, { 'attr': {'class': 'rounder', 'style': 'width: 50%;' } }) }}
+							{{ form_widget(form.subtype, { 'attr': {'class': 'rounder', 'style': 'width: 50%;', 'onchange': 'changeSubType()' } }) }}
 						</div>
 						
 						{% if (form.subtype.vars.errors|length > 0) %}
@@ -122,7 +133,7 @@ function changeType() {
 				    	{% endif %}
 					</div>#}
 
-					<div class="control-group">
+					<div class="control-group" id="agencia">
 						<div class="control-label">
 							<label id="username-lbl" for="agency" class="">Nome da Agência</label>						
 						</div>
