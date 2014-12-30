@@ -143,7 +143,7 @@
 													<h3>Insira algumas imagens para a galeria</h3>				
 													<p>Para melhor visualização, escolha imagens acima de (450px450)</p>
 												{% endif %}
-													<div style="float: left;"><img src="/images/icon-profile-ai.jpg" width="47" height="47"></div>
+													<div style="float: left;"><img src="{% if loop.index == 1 %}/images/icon-profile-ai.jpg{% else %}/assets/photo.gif{% endif %}" width="47" height="47"></div>
 											        {{ form_errors(artistImage) }}
 											        {{ form_widget(artistImage, { 'attr': { 'size': 50 }}) }}
 											{% endfor %}
