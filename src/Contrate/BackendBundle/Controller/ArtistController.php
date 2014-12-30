@@ -232,17 +232,17 @@ class ArtistController extends Controller
 
         $this->get('session')->getFlashBag()->set('error', 'Preencha todos os campos do formulário!');
 
-        $breadcrumbs = $this->get("white_october_breadcrumbs");
+        //$breadcrumbs = $this->get("white_october_breadcrumbs");
 
-        $breadcrumbs->addItem("Home", $this->get("router")->generate("contrate_frontend_homepage"));
+        //$breadcrumbs->addItem("Home", $this->get("router")->generate("contrate_frontend_homepage"));
 
-        $breadcrumbs->addItem($artist->getCategory()->getName(), $this->get("router")
-            ->generate("contrate_frontend_search", array('category' => $artist->getCategory()->getId())));
+        //$breadcrumbs->addItem($artist->getCategory()->getName(), $this->get("router")
+        //    ->generate("contrate_frontend_search", array('category' => $artist->getCategory()->getId())));
 
 
-        $breadcrumbs->addItem($artist->getName());
+        //$breadcrumbs->addItem($artist->getName());
 
-        $total_imgs = count($artist->getArtistImages());
+        //$total_imgs = count($artist->getArtistImages());
         return $this->showAction($artist_id);
         /*return $this->render('ContrateBackendBundle:Artist:show.html.twig', array(
             'entity' => $entity,
