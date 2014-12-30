@@ -20,7 +20,8 @@ class Mailer
 
         // Load the template in
         if ($type == 'newartist') {
-            $to_email = 'michelkneit@gmail.com';
+            $to_email = 'bernardoniteroi@gmail.com';
+            //$to_email = 'michelkneit@gmail.com';
         } else {
             $user = $entity->getArtist()->getUser();
             $to_email = $user->getEmail();
@@ -44,7 +45,8 @@ class Mailer
             ->setFrom("contato@contrateartista.com.br")
             ->setTo($to_email)
             //->setCco('bernardoniteroi@gmail.com')
-            ->setBcc('michelkneit@gmail.com')
+            ->setBcc('bernardo.d.alves@gmail.com')
+            //->setBcc('michelkneit@gmail.com')
             ->setBody($body, 'text/html');
             //echo "<pre>";var_dump($message);
 
