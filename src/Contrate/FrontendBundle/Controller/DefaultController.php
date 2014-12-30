@@ -69,8 +69,9 @@ class DefaultController extends Controller
 
             $data = $filterForm->getData();
             $filters = array();
-            
-            $q = $data['q'] ? $data['q'] : $_POST['q'];
+            if (!$data['q'] && isset($_POST['q']))
+                $data['q'] = $_POST['q']; 
+            $q = $data['q'];
             //$cat   = $data['category'];
             //var_dump($_POST);exit;
 
