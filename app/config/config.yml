@@ -67,8 +67,9 @@ swiftmailer:
     #encryption: ssl
     #auth_mode:  login
     #host:       smtp.gmail.com
-    username:   bernardoniteroi
-    password:   Dyd6cOf2nPtV06
+    username:   marketing@contrateartistas.com
+    #password:   Dyd6cOf2nPtV06
+    password: tr4b4lho
 
 
 
