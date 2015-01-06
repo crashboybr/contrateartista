@@ -1,18 +1,20 @@
 {% block body %}
-Novo Contato<br />
+Contato através do Buscador Contrate Artistas - O Maior Buscador de Artistas do Brasil<br />
+<br />
 
-Nome: {{ entity.name }}<br />
-Email: {{ entity.email }}<br />
+Nome do Contato: {{ entity.name }}<br />
 Telefone: {{ entity.phone }}<br />
-Data do Evento: {{ entity.eventAt }}<br />
+Nome do Artista: {{ entity.artist.name }}<br />
+Tipo do Evento: {{ entity.event }}<br />
+Data: {{ entity.eventAt }}<br />
 Local: {{ entity.city }} / {{ entity.state }}<br />
-Descrição do evento: {{ entity.description }}<br />
-
+Email: {{ entity.email }}<br />
+Comentário: {{ entity.description }}<br />
 
 
 {% endblock %}
 
 {% block subject -%}
-Contato Contrate Artista
+ORÇAMENTO: {{ entity.artist.name }} Contrate Artistas
 {% endblock %}
 
