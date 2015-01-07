@@ -21,7 +21,8 @@ class Mailer
         // Load the template in
         if ($type == 'newartist') {
             //$to_email = 'bernardoniteroi@gmail.com';
-            $to_email = 'michelkneit@gmail.com';
+            //$to_email = 'michelkneit@gmail.com';
+            $to_email = 'marketing@contrateartistas.com';
         } else {
             $user = $entity->getArtist()->getUser();
             $to_email = $user->getEmail();
@@ -42,11 +43,11 @@ class Mailer
 
         $message = \Swift_Message::newInstance()
             ->setSubject($subject)
-            ->setFrom("contato@contrateartista.com.br")
+            ->setFrom("contato@contrateartistas.com")
             ->setTo($to_email)
             //->setCco('bernardoniteroi@gmail.com')
             //->setBcc('bernardo.d.alves@gmail.com')
-            ->setBcc('michelkneit@gmail.com')
+            ->setBcc('marketing@contrateartistas.com')
             ->setBody($body, 'text/html');
             //echo "<pre>";var_dump($message);
 
