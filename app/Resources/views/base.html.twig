@@ -81,6 +81,12 @@
   ga('send', 'pageview');
 
 </script>
+
+<script>
+function sendClick(type) {
+  ga('send', 'event', type, 'click', 'download');
+}
+</script>
        
 
     
@@ -109,7 +115,7 @@
 
             
             <li class="item-530">
-            <a class="color" href="{{ path('artist_new') }}">Inserir um artista gratis</a></li></ul>
+            <a class="color" id="new-artist" href="{{ path('artist_new') }}" onclick="sendClick('inserir-artista');">Inserir um artista gratis</a></li></ul>
             {% else %}
               <li class="item-527">
             <a href="{{ path('fos_user_security_login') }}">Login</a></li><li class="item-528">

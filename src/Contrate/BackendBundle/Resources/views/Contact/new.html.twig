@@ -117,7 +117,7 @@
 		</div>
 
 		<div class="controls">
-			{{ form_widget(form.submit, { 'attr': { 'class': 'btn btn-primary' }}) }}
+			{{ form_widget(form.submit, { 'attr': { 'class': 'btn btn-primary', 'onclick': 'sendClick("send-contact")' }}) }}
         </div>
 
 {{ form_end(form) }}
