@@ -119,8 +119,8 @@ function sendClick(type) {
             {% else %}
               <li class="item-527">
             <a href="{{ path('fos_user_security_login') }}">Login</a></li><li class="item-528">
-            <a href="{{ path('fos_user_registration_register') }}">Cadastre-se</a></li><li class="item-530">
-            <a class="color" href="{{ path('artist_new') }}">Inserir um artista grátis</a></li></ul>
+            <a href="{{ path('fos_user_registration_register') }}"  onclick="sendClick('cadastre-se');">Cadastre-se</a></li><li class="item-530">
+            <a class="color" href="{{ path('artist_new') }}" onclick="sendClick('inserir-artista');">Inserir um artista grátis</a></li></ul>
             {% endif %}
               
              </div>
