@@ -29,7 +29,7 @@ class FilterType extends AbstractType
                       'class'    => 'ContrateBackendBundle:Category',
                       'property' => 'name' ,
                       'expanded' => true ,
-                      'multiple' => true , ))
+                      'multiple' => false , ))
             
             ->add('submit', 'submit', array('label' => 'Buscar'))
             

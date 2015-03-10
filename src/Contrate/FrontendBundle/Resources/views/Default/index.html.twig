@@ -21,7 +21,7 @@
           <div class="jm-module-in">
             <div class="jm-module-content clearfix">
               <div id="mod_djcf_search211" class="dj_cf_search">
-                <form action="{{ path('contrate_frontend_search') }}" method="post" name="" id="form-search">
+                <form action="{{ path('contrate_frontend_search') }}" method="get" name="" id="form-search">
                   <input type="text" size="12" name="q" class="inputbox first_input" placeholder="Procurar um artista..." >
                   <input type="hidden" name="page" value=1>
                   <button type="submit" class="button btn">Buscar</button>
@@ -71,7 +71,7 @@
 
                 	<div class="dj-category cat_cols4">
                 		<div class="cat_row_title">
-                			Categorias<a class="rss_icon" href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/category-table-layout?format=feed&type=rss"><img src="/assets/rss.png"></a>        
+                			Categorias<!--<a class="rss_icon" href="http://templates.joomla-monster.com/joomla30/jm-joomclassifieds/index.php/category-table-layout?format=feed&type=rss"><img src="/assets/rss.png"></a>-->
                 		</div>
                 		<div class="cat_row cat_row0">    
                 			{% for cat in categories %}  
@@ -79,10 +79,10 @@
                 			<div class="cat_col">
                 				<div class="cat_col_in">
                 					<div class="title">
-                						<a href="{{ path('contrate_frontend_search', {'category': cat.id }) }}"><img src="{{ asset(cat.pic) }}" alt="{{ cat.name }}"></a>
+                						<a href="{{ path('contrate_frontend_search', {'cat': cat.id }) }}"><img src="{{ asset(cat.pic) }}" alt="{{ cat.name }}"></a>
                 						<div class="cat_title_desc">
                 							<h2>
-                								<a href="{{ path('contrate_frontend_search', {'category': cat.id }) }}">{{ cat.name }} <span>({{ total[cat.name] }})</span></a>
+                								<a href="{{ path('contrate_frontend_search', {'cat': cat.id }) }}">{{ cat.name }} <span>({{ total[cat.name] }})</span></a>
                 							</h2>
                 							<span class="cat_desc"></span>
                 						</div>

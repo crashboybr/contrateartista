@@ -84,7 +84,7 @@ fos_user:
             enabled: true
     from_email:
         address:        nao-responda@contrateartista.com.br
-        sender_name:    Equipe Contrate Artista
+        sender_name:    Equipe Contrate Artistas
 
 
 knp_paginator:

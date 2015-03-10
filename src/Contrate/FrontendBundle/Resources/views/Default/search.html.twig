@@ -102,25 +102,37 @@
 
                 <div class="jm-module-content clearfix">
                   <div id="mod_djcf_search206" class="dj_cf_search">
-                    {{ form_start(filterForm, { attr: { 'novalidate': 'novalidate', 'id': 'filters', 'method': 'get' }}) }}
-                    <h3 class="jm-title ">Busca</h3>
+                    <form action="" method="GET" novalidate>
+                    {#
+                    {{ form_start(filterForm, { attr: { 'novalidate': 'novalidate', 'id': 'filters', 'method': 'get' }}) }} 
+
+                    {{ form_widget(category, { attr: { 'class': 'inputbox', 'onclick': 'submitFilter()' }}) }}
+                    {% for category in filterForm.category %}
+                    {{ form_widget(filterForm.submit, { attr: { 'class': 'button btn' }}) }}
+                    {{ form_end(filterForm) }}
                     {{ form_widget(filterForm.q, { attr: { 'class': 'inputbox first_input', 'placeholder': 'Busque um artista...' }}) }}
+                    {{ form_widget(filterForm.submit, { attr: { 'class': 'button btn' }}) }}
+                    #}
+                    <h3 class="jm-title ">Busca</h3>
+                    
+                    <input type="text" id="q" name="q" class="inputbox first_input" placeholder="Busque um artista...">
                     <div style="clear:both"></div>
                     <div style="clear:both"></div><br/>
 
                     <h3 class="jm-title ">Categorias</h3> 
 
-                    {% for category in filterForm.category %}
+                    
+                    {% for category in categories %}
                     <div class="search_only_images">              
-                      {{ form_widget(category, { attr: { 'class': 'inputbox', 'onclick': 'submitFilter()' }}) }}
-                      <span class="label">{{ category.vars.label }}</span>
+                      <input type='checkbox' name='cat[]' {% if selcats[category.id] is defined %}checked{% endif %} value='{{ category.id }}'> <span class="label">{{ category.name }}</span>
                     </div>
                     {% endfor %}
+                    
+                    <button type="submit" id="contrate_filter_submit" class="button btn">Buscar</button>
 
                     <br />
-                    <input type="hidden" name="page" value={{ page }} />
-                    {{ form_widget(filterForm.submit, { attr: { 'class': 'button btn' }}) }}
-                    {{ form_end(filterForm) }}
+                    
+                    </form>
                     <div style="clear:both"></div>
                   </div>
                 </div>
