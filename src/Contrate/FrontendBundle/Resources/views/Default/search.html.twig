@@ -38,7 +38,6 @@
                   <table class="dj-items" width="100%">
                     <tbody>
                       {% for artist in artists %}
-                        {% if artist.status !=-1%}
                       <tr class="row0">
                         <td class="icon first" width="140px">
                           <a href="{{ path('artist_show', {'id': artist.id }) }}">
@@ -54,7 +53,6 @@
                         <td class="date_exp"><a href="{{ path('artist_show', {'id': artist.id }) }}">{{ artist.user.name }}</a></td>
                         <td class="col_distance"><a href="{{ path('artist_show', {'id': artist.id }) }}"><button type="button" class="btn-listing">Contato</button></a></td>
                       </tr>
-                      {% endif %}
                       {% endfor %}
 
                     </tbody>

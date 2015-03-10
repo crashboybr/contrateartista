@@ -100,6 +100,8 @@ class DefaultController extends Controller
                 $qb->andWhere('f.category in (:category)');
                 //$qb->andWhere('f.category = :category');
             }
+
+            $qb->andWhere('f.status <> -1');
             //var_dump($filters);exit;
             $qb->setParameters($filters);
             
